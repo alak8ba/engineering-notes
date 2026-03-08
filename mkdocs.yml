@@ -1,9 +1,12 @@
 site_name: Backend Engineering Notes
 site_description: Backend architecture, event-driven systems and DevOps patterns
 site_author: Aliasoft
-
+extra_css:
+  - stylesheets/extra.css
 theme:
     name: material
+    favicon: null
+    logo: null
     features:
         - navigation.tabs
         - navigation.sections
@@ -11,16 +14,22 @@ theme:
         - navigation.expand
         - search.highlight
     palette:
+      #  Colors:  blue  indigo  teal  cyan  deep purple
       - scheme: default
-        primary: blue
+        primary: indigo
+        accent: indigo
         toggle:
           icon: material/weather-night
           name: Dark mode
       - scheme: slate
-        primary: blue
+        primary: deep purple
+        accent: deep purple
         toggle:
           icon: material/weather-sunny
           name: Light mode
+
+
+
 markdown_extensions:
     - admonition
     - tables

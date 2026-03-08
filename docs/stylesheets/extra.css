@@ -1,0 +1,48 @@
+/* améliorer la lisibilité du texte */
+.md-typeset {
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* titres plus visibles */
+.md-typeset h1 {
+    font-weight: 700;
+}
+
+.md-typeset h2 {
+    font-weight: 600;
+}
+
+/* header style plus moderne */
+.md-header {
+    background-color: #0f172a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* titre du site */
+.md-header__title {
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+/* élargir la zone de lecture */
+.md-grid {
+    max-width: 1400px;
+}
+/* bouton dark mode */
+.md-header__button.md-icon {
+    color: #cbd5f5;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.md-header__button.md-icon:hover {
+    opacity: 1;
+}
+/* blocs de code plus propres */
+.md-typeset pre {
+    border-radius: 8px;
+}
+.md-typeset table {
+    font-size: 0.9rem;
+}
