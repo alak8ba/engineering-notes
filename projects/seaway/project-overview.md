@@ -375,3 +375,18 @@ D’autres notes pourront être ajoutées ensuite, par exemple sur :
 - design system frontend
 - décisions d’architecture
 - agrégats métier
+
+## Contexte de collaboration
+
+Le projet a été mené en collaboration avec une société
+spécialisée dans le développement de solutions SaaS.
+
+Cette collaboration a permis de confronter les choix
+techniques à des contraintes proches d’un environnement
+professionnel réel, notamment en matière de :
+
+- architecture
+- fiabilité
+- déploiement
+- sécurité
+- organisation du code
