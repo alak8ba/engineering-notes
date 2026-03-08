@@ -1,6 +1,6 @@
 # Hexagonal Architecture (Ports and Adapters)
 
-```md
+
 ## Hexagonal Architecture Diagram
 
 ```mermaid
@@ -17,6 +17,7 @@ UC --> DOM
 UC --> REP
 REP --> DB
 ```
+
 ## Contexte
 
 Dans de nombreuses applications backend traditionnelles,
