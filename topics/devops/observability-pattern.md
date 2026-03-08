@@ -1,1 +1,4 @@
-
+logs
+metrics
+tracing
+healthchecks
