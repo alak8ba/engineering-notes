@@ -68,7 +68,7 @@ Flux :
 # Architecture
 
 Flux simplifié :
-```mermaid
+```
 Client
 |
 v
@@ -95,3 +95,106 @@ Kafka
 # Table Outbox
 
 Exemple de structure :
+```
+outbox_events
+
+id
+aggregate_id
+event_type
+payload
+created_at
+processed
+```
+
+Le champ `processed` indique
+si l'événement a déjà été publié.
+
+---
+
+# Publication des événements
+
+Un composant dédié lit régulièrement
+les événements de la table outbox.
+
+Flux :
+
+1. lire les événements non traités
+2. publier l'événement dans Kafka
+3. marquer l'événement comme traité
+
+---
+
+# Avantages
+
+Le Outbox Pattern apporte plusieurs bénéfices :
+
+- élimine le problème du dual write
+- garantit que les événements ne sont pas perdus
+- permet de rejouer les événements
+- améliore la fiabilité du système
+
+---
+
+# Inconvénients
+
+Le pattern introduit :
+
+- une table supplémentaire
+- un composant de publication
+- une complexité légèrement supérieure
+
+Cependant cette complexité est généralement
+acceptable dans les architectures distribuées.
+
+---
+
+# Interaction avec d'autres patterns
+
+Le Outbox Pattern fonctionne généralement
+avec d'autres mécanismes de fiabilité :
+
+- Retry
+- Dead Letter Topics
+- Idempotent Consumers
+
+Ces patterns combinés permettent de construire
+des systèmes distribués robustes.
+
+---
+
+# Alternatives
+
+## Publication directe
+
+Publier directement dans Kafka
+après la transaction est plus simple
+mais expose au problème du dual write.
+
+---
+
+## Transactions distribuées
+
+Certaines technologies proposent
+des transactions distribuées.
+
+Cependant elles sont souvent :
+
+- complexes
+- difficiles à maintenir
+- peu compatibles avec Kafka
+
+---
+
+# Conclusion
+
+Le Outbox Pattern est une pratique largement
+adoptée dans les architectures event-driven.
+
+Il permet de garantir la cohérence
+entre la base de données et les événements
+publiés dans le système.
+
+Associé à des mécanismes comme
+Retry, DLT et Idempotence,
+il constitue un pilier de la fiabilité
+des systèmes distribués.
