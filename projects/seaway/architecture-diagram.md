@@ -62,15 +62,30 @@ Kafka->>Consumer: Consommation événement
 Consumer->>ReadModel: Mise à jour read model
 ```
 Description :
-1- une commande est envoyée à l'API
-2- le domaine applique la logique métier
-
-un événement est généré
-
-l'événement est enregistré dans l'outbox
-
-l'événement est publié dans Kafka
-
-les consumers mettent à jour les read models
+1. une commande est envoyée à l'API
+2. le domaine applique la logique métier
+3. un événement est généré
+4. l'événement est enregistré dans l'outbox
+5. l'événement est publié dans Kafka
+6. les consumers mettent à jour les read models
 
 # 3 — Flux d’authentification JWT
+```mermaid
+sequenceDiagram
+
+participant User
+participant Frontend
+participant Backend
+participant DB
+
+User->>Frontend: Login
+Frontend->>Backend: POST /auth/login
+Backend->>DB: Vérification utilisateur
+Backend->>Frontend: Access Token + Refresh Token
+
+Frontend->>Backend: GET /auth/me
+Backend->>Frontend: Données utilisateur
+
+Frontend->>Backend: POST /auth/refresh
+Backend->>Frontend: Nouveau Access Token
+```
