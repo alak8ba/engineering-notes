@@ -375,6 +375,24 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -391,6 +409,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#topics-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topics covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-driven-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event-Driven Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DevOps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case Study
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1169,6 +1272,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#topics-covered" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Topics covered
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-driven-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event-Driven Systems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DevOps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Case Study
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1185,17 +1362,66 @@
 
 
 <h1 id="backend-engineering-notes">Backend Engineering Notes<a class="headerlink" href="#backend-engineering-notes" title="Permanent link">&para;</a></h1>
-<p>This documentation gathers engineering notes about
-modern backend systems.</p>
+<p>Documentation about backend architecture, distributed systems
+and DevOps practices.</p>
+<hr />
+<h2 id="topics-covered">Topics covered<a class="headerlink" href="#topics-covered" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Architecture patterns</li>
+<li>Event-driven systems</li>
+<li>Messaging reliability</li>
+<li>Security patterns</li>
+<li>DevOps and infrastructure</li>
+<li>Real-world case studies</li>
+</ul>
+<hr />
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<p>Designing modern backend systems using:</p>
+<ul>
+<li>Hexagonal Architecture</li>
+<li>CQRS</li>
+<li>Event-Driven Architecture</li>
+</ul>
+<p>→ See the Architecture section.</p>
+<hr />
+<h2 id="event-driven-systems">Event-Driven Systems<a class="headerlink" href="#event-driven-systems" title="Permanent link">&para;</a></h2>
+<p>Reliable messaging with Kafka.</p>
 <p>Topics include:</p>
 <ul>
-<li>architecture patterns</li>
-<li>event-driven systems</li>
-<li>distributed messaging</li>
-<li>security</li>
-<li>DevOps</li>
+<li>Retry strategies</li>
+<li>Dead Letter Topics</li>
+<li>Idempotent consumers</li>
+<li>Outbox pattern</li>
 </ul>
-<p>The notes are based on real-world project experience.</p>
+<hr />
+<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
+<p>Modern API security practices:</p>
+<ul>
+<li>JWT authentication</li>
+<li>RBAC</li>
+<li>Secure cookies</li>
+<li>HTTP security headers</li>
+</ul>
+<hr />
+<h2 id="devops">DevOps<a class="headerlink" href="#devops" title="Permanent link">&para;</a></h2>
+<p>Infrastructure and deployment practices:</p>
+<ul>
+<li>Docker production patterns</li>
+<li>Container security</li>
+<li>Reverse proxy configuration</li>
+<li>CI/CD pipelines</li>
+</ul>
+<hr />
+<h2 id="case-study">Case Study<a class="headerlink" href="#case-study" title="Permanent link">&para;</a></h2>
+<p>The <strong>Seaway project</strong> documents a real backend architecture.</p>
+<p>Includes:</p>
+<ul>
+<li>architecture overview</li>
+<li>CI/CD pipeline</li>
+<li>security setup</li>
+<li>ADR (architecture decisions)</li>
+</ul>
+<p>→ See the Projects section.</p>
 
 
 
