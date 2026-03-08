@@ -68,7 +68,7 @@ Flux :
 # Architecture
 
 Flux simplifié :
-```
+```mermaid
 Client
 |
 v
@@ -89,3 +89,9 @@ Outbox Publisher
 v
 Kafka
 ```
+
+---
+
+# Table Outbox
+
+Exemple de structure :
