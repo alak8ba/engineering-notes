@@ -95,7 +95,7 @@ Description :
 1. l'utilisateur se connecte
 2. le backend génère un access token et un refresh token
 3. les tokens sont stockés dans des cookies HttpOnly
-4. le frontend utilise /auth/me pour récupérer l'utilisateur
+4. le frontend utilise `/auth/me` pour récupérer l'utilisateur
 5. si le token expire, un refresh est effectué automatiquement
 
 # 4 — Architecture CI/CD
@@ -123,3 +123,18 @@ Description :
 4. les images sont publiées dans GHCR
 5. le serveur récupère les nouvelles images
 6. Watchtower redéploie automatiquement les containers
+
+# Résumé de l'architecture
+
+Le système Seaway repose sur plusieurs principes clés :
+- architecture hexagonale
+- event-driven architecture
+- CQRS léger
+- API stateless avec JWT
+- déploiement conteneurisé
+- CI/CD automatisé
+
+Cette architecture permet :
+- une forte modularité
+- une bonne résilience
+- une évolution progressive du système
