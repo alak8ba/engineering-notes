@@ -1,19 +1,19 @@
 # Seaway — Project Overview
 
-## Contexte général
+Projet backend / frontend conçu dans le cadre d’une collaboration
+technique autour d’architectures modernes orientées événements.
 
-Seaway est un projet backend / frontend développé dans le cadre
-d’une collaboration avec une société basée à Paris spécialisée
-dans le développement de solutions SaaS.
+---
 
-Le projet vise à concevoir et expérimenter une architecture
-backend moderne orientée événements, tout en appliquant
-des pratiques d’ingénierie proches d’un contexte de production.
+## Contexte
 
-L'objectif est de construire un système robuste et évolutif,
-capable de servir de base à des fonctionnalités métier réelles,
-tout en structurant les choix techniques et l'architecture
-de manière claire et maintenable.
+Seaway est un système backend / frontend conçu pour explorer
+et mettre en œuvre une architecture orientée événements basée
+sur Spring Boot, Kafka et une architecture hexagonale.
+
+Le projet vise à construire une base applicative robuste et
+évolutive tout en appliquant des pratiques d’ingénierie proches
+d’un environnement de production.
 
 ---
 
