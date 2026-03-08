@@ -161,24 +161,36 @@ les systèmes externes.
 Une organisation fréquente
 dans un projet Spring Boot :
 ```
-domain/
-model
-events
-exceptions
-
-application/
-usecase
-ports
-
-adapter/
-in
-rest
-out
-persistence
-messaging
-
-infrastructure/
-configuration
+src/
+ ├── domain/
+ │    ├── model/
+ │    ├── events/
+ │    ├── exceptions/
+ │    └── services/        (optionnel)
+ │
+ ├── application/
+ │    ├── usecase/
+ │    ├── ports/
+ │    │     ├── in/
+ │    │     └── out/
+ │    └── dto/             (optionnel)
+ │
+ ├── adapter/
+ │    ├── in/
+ │    │     ├── rest/
+ │    │     ├── messaging/
+ │    │     └── graphql/   (optionnel)
+ │    │
+ │    └── out/
+ │          ├── persistence/
+ │          ├── messaging/
+ │          └── external/
+ │
+ └── infrastructure/
+      ├── configuration/
+      ├── security/
+      ├── mapper/
+      └── framework/
 ```
 
 Cette structure reflète
