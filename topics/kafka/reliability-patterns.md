@@ -1,5 +1,26 @@
 # Kafka Reliability Patterns
+## Reliability Architecture
 
+```mermaid
+flowchart LR
+
+A[Client Command]
+B[Service]
+C[(Database)]
+D[(Outbox)]
+E[Kafka Topic]
+F[Consumer]
+G[Retry]
+H[DLT]
+
+A --> B
+B --> C
+B --> D
+D --> E
+E --> F
+F --> G
+G --> H
+```
 ## Contexte
 
 Les architectures basées sur Kafka reposent sur
