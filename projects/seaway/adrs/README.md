@@ -15,7 +15,7 @@ et d'expliquer les raisons derrière ces choix.
 
 ---
 
-## Liste des décisions
+# Liste des décisions
 
 - ADR-001 — Event Driven Architecture  
   `ADR-001-event-driven-architecture.md`
@@ -35,9 +35,27 @@ et d'expliquer les raisons derrière ces choix.
 - ADR-006 — CQRS Read Model Strategy  
   `ADR-006-cqrs-read-model-strategy.md`
 
+- ADR-007 — Domain Events and Outbox Pattern  
+  `ADR-007-domain-events-and-outbox-pattern.md`
+
+- ADR-008 — Idempotent Consumers Strategy  
+  `ADR-008-idempotent-consumers-strategy.md`
+
+- ADR-009 — API Streaming Strategy (SSE vs WebSocket vs Polling)  
+  `ADR-009-api-streaming-strategy.md`
+
+- ADR-010 — Container Security Strategy  
+  `ADR-010-container-security-strategy.md`
+
+- ADR-011 — JWT Authentication Strategy  
+  `ADR-011-jwt-authentication-strategy.md`
+
+- ADR-012 — RBAC Authorization Model  
+  `ADR-012-rbac-authorization-model.md`
+
 ---
 
-## Pourquoi utiliser des ADR
+# Pourquoi utiliser des ADR
 
 Les Architecture Decision Records permettent de :
 
@@ -45,3 +63,6 @@ Les Architecture Decision Records permettent de :
 - documenter les compromis techniques
 - faciliter l’onboarding de nouveaux développeurs
 - conserver une mémoire technique du projet
+
+Chaque ADR explique **pourquoi une décision a été prise**, et pas
+seulement **ce qui a été implémenté**.
