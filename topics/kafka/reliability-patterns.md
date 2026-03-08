@@ -32,29 +32,30 @@ un pipeline événementiel robuste.
 ---
 
 # Vue d’ensemble
-```
+
 Architecture simplifiée :
-Client
-|
-v
-Service
-|
-+--> Database
-|
-+--> Outbox
-|
-v
-Kafka
-|
-v
-Consumer
-|
-+--> Retry
-|
-+--> DLT
-|
-v
-Business Logic
+```
+     Client
+        |
+        v
+     Service  
+        |
+        +--> Database
+        |
+        +--> Outbox
+        |
+        v
+      Kafka
+        |
+        v
+     Consumer
+        |
+        +--> Retry
+        |
+        +--> DLT
+        |
+        v
+  Business Logic
 ```
 ---
 
