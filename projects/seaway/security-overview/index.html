@@ -1186,61 +1186,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#backend" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Backend
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reverse-proxy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reverse Proxy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-security" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Docker Security
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#firewall" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firewall
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#infrastructure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Infrastructure
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1294,61 +1239,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#backend" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Backend
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reverse-proxy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reverse Proxy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-security" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Docker Security
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#firewall" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Firewall
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#infrastructure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Infrastructure
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1368,49 +1258,99 @@
 
 <h1 id="seaway-security-overview">Seaway — Security Overview<a class="headerlink" href="#seaway-security-overview" title="Permanent link">&para;</a></h1>
 <h2 id="objectif">Objectif<a class="headerlink" href="#objectif" title="Permanent link">&para;</a></h2>
-<p>Mettre en place une infrastructure sécurisée par défaut
-pour l'application Seaway.</p>
-<hr />
-<h2 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h2>
-<p>Spring Security configuré en mode stateless.</p>
-<p>Choix actuels :</p>
+<p>Mettre en place une architecture de sécurité
+défensive par défaut pour l'application Seaway.</p>
+<p>Les principes suivis :</p>
 <ul>
-<li>CSRF désactivé (API REST)</li>
-<li>sessions désactivées</li>
-<li>endpoints API temporairement publics</li>
+<li>authentification stateless</li>
+<li>séparation frontend / backend</li>
+<li>exposition minimale des services</li>
+<li>défense en profondeur</li>
 </ul>
-<p>Préparation pour une future authentification JWT.</p>
 <hr />
-<h2 id="reverse-proxy">Reverse Proxy<a class="headerlink" href="#reverse-proxy" title="Permanent link">&para;</a></h2>
-<p>Nginx assure :</p>
+<h1 id="authentification">Authentification<a class="headerlink" href="#authentification" title="Permanent link">&para;</a></h1>
+<p>Seaway utilise une authentification basée sur <strong>JWT</strong>.</p>
+<p>Architecture :</p>
+<ul>
+<li>Access Token (durée de vie courte)</li>
+<li>Refresh Token (renouvellement de session)</li>
+</ul>
+<p>Les tokens sont stockés dans :</p>
+<ul>
+<li>cookies <strong>HttpOnly</strong></li>
+<li>cookies <strong>Secure</strong></li>
+</ul>
+<p>Flux d'authentification :</p>
+<ol>
+<li><code>POST /auth/login</code></li>
+<li>génération access token + refresh token</li>
+<li>stockage dans cookies sécurisés</li>
+<li>appels API authentifiés via cookies</li>
+<li><code>POST /auth/refresh</code> pour renouveler l'access token</li>
+</ol>
+<hr />
+<h1 id="autorisation">Autorisation<a class="headerlink" href="#autorisation" title="Permanent link">&para;</a></h1>
+<p>Le système utilise un modèle <strong>RBAC (Role-Based Access Control)</strong>.</p>
+<p>Rôles actuels :</p>
+<ul>
+<li><code>ADMIN</code></li>
+<li><code>USER</code></li>
+</ul>
+<p>L'autorisation est appliquée via :</p>
+<ul>
+<li>Spring Security</li>
+<li>contrôles d'accès au niveau des endpoints</li>
+</ul>
+<hr />
+<h1 id="backend-security">Backend Security<a class="headerlink" href="#backend-security" title="Permanent link">&para;</a></h1>
+<p>Spring Security est configuré en <strong>mode stateless</strong>.</p>
+<p>Principes :</p>
+<ul>
+<li>sessions désactivées</li>
+<li>authentification via JWT</li>
+<li>filtres personnalisés pour validation du token</li>
+</ul>
+<p>Protections :</p>
+<ul>
+<li>password hashing via <strong>BCrypt</strong></li>
+<li>optimistic locking (<code>@Version</code>)</li>
+<li>validation des entrées</li>
+</ul>
+<hr />
+<h1 id="reverse-proxy">Reverse Proxy<a class="headerlink" href="#reverse-proxy" title="Permanent link">&para;</a></h1>
+<p>Nginx agit comme point d'entrée unique.</p>
+<p>Responsabilités :</p>
 <ul>
 <li>terminaison HTTPS</li>
 <li>reverse proxy vers le backend</li>
 <li>protection contre certaines attaques</li>
 </ul>
-<p>Headers de sécurité :</p>
+<p>Headers de sécurité activés :</p>
 <ul>
-<li>X-Frame-Options</li>
-<li>Strict-Transport-Security</li>
-<li>Referrer-Policy</li>
-<li>Permissions-Policy</li>
+<li><code>X-Frame-Options</code></li>
+<li><code>X-Content-Type-Options</code></li>
+<li><code>Strict-Transport-Security</code></li>
+<li><code>Referrer-Policy</code></li>
+<li><code>Permissions-Policy</code></li>
 </ul>
 <hr />
-<h2 id="docker-security">Docker Security<a class="headerlink" href="#docker-security" title="Permanent link">&para;</a></h2>
-<p>Containers exécutés :</p>
+<h1 id="docker-security">Docker Security<a class="headerlink" href="#docker-security" title="Permanent link">&para;</a></h1>
+<p>Les conteneurs sont configurés selon le principe
+du <strong>moindre privilège</strong>.</p>
+<p>Mesures appliquées :</p>
 <ul>
-<li>avec un user non-root</li>
-<li>filesystem read-only</li>
-<li>/tmp en tmpfs</li>
+<li>exécution avec un utilisateur non-root</li>
+<li>filesystem en lecture seule</li>
+<li><code>/tmp</code> monté en <code>tmpfs</code></li>
 </ul>
 <hr />
-<h2 id="firewall">Firewall<a class="headerlink" href="#firewall" title="Permanent link">&para;</a></h2>
-<p>UFW configuré avec une politique restrictive.</p>
-<p>Ports ouverts :</p>
+<h1 id="firewall">Firewall<a class="headerlink" href="#firewall" title="Permanent link">&para;</a></h1>
+<p>Le firewall UFW applique une politique restrictive.</p>
+<p>Ports exposés :</p>
 <ul>
-<li>22 (SSH)</li>
-<li>80 (ACME)</li>
-<li>443 (HTTPS)</li>
+<li><code>22</code> — SSH</li>
+<li><code>80</code> — ACME challenge (certificats)</li>
+<li><code>443</code> — HTTPS</li>
 </ul>
 <p>Ports internes non exposés :</p>
 <ul>
@@ -1418,11 +1358,28 @@ pour l'application Seaway.</p>
 <li>Kafka</li>
 </ul>
 <hr />
-<h2 id="infrastructure">Infrastructure<a class="headerlink" href="#infrastructure" title="Permanent link">&para;</a></h2>
+<h1 id="isolation-reseau">Isolation réseau<a class="headerlink" href="#isolation-reseau" title="Permanent link">&para;</a></h1>
 <p>Les services sensibles ne sont accessibles
 que via le réseau Docker interne.</p>
-<p>Kafka et PostgreSQL ne sont jamais exposés
-publiquement.</p>
+<ul>
+<li>PostgreSQL</li>
+<li>Kafka</li>
+<li>services internes</li>
+</ul>
+<p>Aucun de ces services n'est exposé publiquement.</p>
+<hr />
+<h1 id="defense-en-profondeur">Défense en profondeur<a class="headerlink" href="#defense-en-profondeur" title="Permanent link">&para;</a></h1>
+<p>La sécurité repose sur plusieurs couches :</p>
+<ol>
+<li>authentification JWT</li>
+<li>autorisation RBAC</li>
+<li>reverse proxy sécurisé</li>
+<li>isolation réseau</li>
+<li>conteneurs sécurisés</li>
+<li>firewall restrictif</li>
+</ol>
+<p>Cette approche limite l'impact
+d'une compromission éventuelle.</p>
 
 
 
