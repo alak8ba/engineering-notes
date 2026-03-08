@@ -13,28 +13,24 @@
       
       
       
-        <link rel="prev" href="../idempotent-consumers/">
-      
-      
-        <link rel="next" href="../reliability-patterns/">
       
       
         
       
       
-      <link rel="icon" href="../../../None">
+      <link rel="icon" href="../../None">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Outbox Pattern - Backend Engineering Notes</title>
+        <title>MermaidTest - Backend Engineering Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +49,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -79,11 +75,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#outbox-pattern-in-event-driven-architectures" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -94,7 +85,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Backend Engineering Notes" class="md-header__button md-logo" aria-label="Backend Engineering Notes" data-md-component="logo">
+    <a href="../.." title="Backend Engineering Notes" class="md-header__button md-logo" aria-label="Backend Engineering Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Outbox Pattern
+              MermaidTest
             
           </span>
         </div>
@@ -215,7 +206,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -236,7 +227,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../architecture/cqrs-pattern/" class="md-tabs__link">
+        <a href="../../topics/architecture/cqrs-pattern/" class="md-tabs__link">
           
   
   
@@ -252,13 +243,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../retry-and-dlt-pattern/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../topics/kafka/retry-and-dlt-pattern/" class="md-tabs__link">
           
   
   
@@ -278,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../security/jwt-authentication-pattern/" class="md-tabs__link">
+        <a href="../../topics/security/jwt-authentication-pattern/" class="md-tabs__link">
           
   
   
@@ -298,7 +287,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../devops/docker-production-pattern/" class="md-tabs__link">
+        <a href="../../topics/devops/docker-production-pattern/" class="md-tabs__link">
           
   
   
@@ -318,7 +307,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../projects/seaway/project-overview/" class="md-tabs__link">
+        <a href="../../projects/seaway/project-overview/" class="md-tabs__link">
           
   
   
@@ -352,7 +341,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Backend Engineering Notes" class="md-nav__button md-logo" aria-label="Backend Engineering Notes" data-md-component="logo">
+    <a href="../.." title="Backend Engineering Notes" class="md-nav__button md-logo" aria-label="Backend Engineering Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -370,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -451,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/cqrs-pattern/" class="md-nav__link">
+      <a href="../../topics/architecture/cqrs-pattern/" class="md-nav__link">
         
   
   
@@ -479,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../spring/hexagonal-architecture/" class="md-nav__link">
+      <a href="../../topics/spring/hexagonal-architecture/" class="md-nav__link">
         
   
   
@@ -511,31 +500,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -553,7 +539,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -571,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../retry-and-dlt-pattern/" class="md-nav__link">
+      <a href="../../topics/kafka/retry-and-dlt-pattern/" class="md-nav__link">
         
   
   
@@ -599,7 +585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../idempotent-consumers/" class="md-nav__link">
+      <a href="../../topics/kafka/idempotent-consumers/" class="md-nav__link">
         
   
   
@@ -624,37 +610,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Outbox Pattern
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../topics/kafka/outbox-pattern/" class="md-nav__link">
         
   
   
@@ -670,37 +629,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#contexte" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Contexte
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -713,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reliability-patterns/" class="md-nav__link">
+      <a href="../../topics/kafka/reliability-patterns/" class="md-nav__link">
         
   
   
@@ -802,7 +730,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../security/jwt-authentication-pattern/" class="md-nav__link">
+      <a href="../../topics/security/jwt-authentication-pattern/" class="md-nav__link">
         
   
   
@@ -891,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/docker-production-pattern/" class="md-nav__link">
+      <a href="../../topics/devops/docker-production-pattern/" class="md-nav__link">
         
   
   
@@ -919,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/container-security/" class="md-nav__link">
+      <a href="../../topics/devops/container-security/" class="md-nav__link">
         
   
   
@@ -947,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/reverse-proxy-pattern/" class="md-nav__link">
+      <a href="../../topics/devops/reverse-proxy-pattern/" class="md-nav__link">
         
   
   
@@ -975,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/pull-based-deployment/" class="md-nav__link">
+      <a href="../../topics/devops/pull-based-deployment/" class="md-nav__link">
         
   
   
@@ -1003,7 +931,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../devops/ci-cd-pipeline-pattern/" class="md-nav__link">
+      <a href="../../topics/devops/ci-cd-pipeline-pattern/" class="md-nav__link">
         
   
   
@@ -1092,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/seaway/project-overview/" class="md-nav__link">
+      <a href="../../projects/seaway/project-overview/" class="md-nav__link">
         
   
   
@@ -1120,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/seaway/architecture-overview/" class="md-nav__link">
+      <a href="../../projects/seaway/architecture-overview/" class="md-nav__link">
         
   
   
@@ -1148,7 +1076,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/seaway/ci-cd-overview/" class="md-nav__link">
+      <a href="../../projects/seaway/ci-cd-overview/" class="md-nav__link">
         
   
   
@@ -1176,7 +1104,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../projects/seaway/security-overview/" class="md-nav__link">
+      <a href="../../projects/seaway/security-overview/" class="md-nav__link">
         
   
   
@@ -1221,27 +1149,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#contexte" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Contexte
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -1258,160 +1165,11 @@
 
 
 
-<h1 id="outbox-pattern-in-event-driven-architectures">Outbox Pattern in Event-Driven Architectures<a class="headerlink" href="#outbox-pattern-in-event-driven-architectures" title="Permanent link">&para;</a></h1>
-<h2 id="contexte">Contexte<a class="headerlink" href="#contexte" title="Permanent link">&para;</a></h2>
-<p>Dans une architecture orientée événements, un service doit souvent :</p>
-<ol>
-<li>modifier l'état métier dans la base de données</li>
-<li>publier un événement dans un broker (Kafka)</li>
-</ol>
-<p>Exemple :</p>
-<ul>
-<li>création d’un séjour</li>
-<li>enregistrement en base</li>
-<li>publication d’un événement <code>SejourCreatedEvent</code></li>
-</ul>
-<p>Un problème classique apparaît alors :
-<div class="highlight"><pre><span></span><code><span class="nt">Write</span><span class="w"> </span><span class="nt">DB</span>
-<span class="o">+</span>
-<span class="nt">Publish</span><span class="w"> </span><span class="nt">Event</span>
-</code></pre></div></p>
-<p>Ces deux opérations ne sont <strong>pas atomiques</strong>.</p>
-<p>Si la base est mise à jour mais que la publication
-de l’événement échoue, le système devient incohérent.</p>
-<p>Ce problème est appelé :</p>
-<p><strong>dual write problem</strong></p>
-<hr />
-<h1 id="le-probleme-du-dual-write">Le problème du Dual Write<a class="headerlink" href="#le-probleme-du-dual-write" title="Permanent link">&para;</a></h1>
-<p>Scénario possible :</p>
-<ol>
-<li>la transaction métier est validée en base</li>
-<li>le service tente de publier un événement Kafka</li>
-<li>le broker Kafka est indisponible</li>
-<li>l’événement n’est jamais publié</li>
-</ol>
-<p>Résultat :</p>
-<ul>
-<li>la base est modifiée</li>
-<li>les autres services ne sont jamais informés</li>
-</ul>
-<p>Le système devient incohérent.</p>
-<hr />
-<h1 id="principe-du-outbox-pattern">Principe du Outbox Pattern<a class="headerlink" href="#principe-du-outbox-pattern" title="Permanent link">&para;</a></h1>
-<p>Le <strong>Outbox Pattern</strong> consiste à enregistrer
-les événements dans une table dédiée
-dans la même transaction que la modification métier.</p>
-<p>Flux :</p>
-<ol>
-<li>modification métier</li>
-<li>écriture de l'événement dans la table <code>outbox</code></li>
-<li>commit de la transaction</li>
-<li>un processus séparé publie les événements vers Kafka</li>
-</ol>
-<hr />
-<h1 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h1>
-<p>Flux simplifié :
-<div class="highlight"><pre><span></span><code>      Client
-        |
-        v
-Application Service
-        |
-        v
-Database Transaction
-        |
-        +--&gt; Write Business Data
-        |
-        +--&gt; Write Outbox Event
-        |
-      Commit
-        |
-        v
-  Outbox Publisher
-        |
-        v
-      Kafka
-</code></pre></div></p>
-<hr />
-<h1 id="table-outbox">Table Outbox<a class="headerlink" href="#table-outbox" title="Permanent link">&para;</a></h1>
-<p>Exemple de structure :
-<div class="highlight"><pre><span></span><code><span class="nt">outbox_events</span>
+  <h1>MermaidTest</h1>
 
-<span class="nt">id</span>
-<span class="nt">aggregate_id</span>
-<span class="nt">event_type</span>
-<span class="nt">payload</span>
-<span class="nt">created_at</span>
-<span class="nt">processed</span>
-</code></pre></div></p>
-<p>Le champ <code>processed</code> indique
-si l'événement a déjà été publié.</p>
-<hr />
-<h1 id="publication-des-evenements">Publication des événements<a class="headerlink" href="#publication-des-evenements" title="Permanent link">&para;</a></h1>
-<p>Un composant dédié lit régulièrement
-les événements de la table outbox.</p>
-<p>Flux :</p>
-<ol>
-<li>lire les événements non traités</li>
-<li>publier l'événement dans Kafka</li>
-<li>marquer l'événement comme traité</li>
-</ol>
-<hr />
-<h1 id="avantages">Avantages<a class="headerlink" href="#avantages" title="Permanent link">&para;</a></h1>
-<p>Le Outbox Pattern apporte plusieurs bénéfices :</p>
-<ul>
-<li>élimine le problème du dual write</li>
-<li>garantit que les événements ne sont pas perdus</li>
-<li>permet de rejouer les événements</li>
-<li>améliore la fiabilité du système</li>
-</ul>
-<hr />
-<h1 id="inconvenients">Inconvénients<a class="headerlink" href="#inconvenients" title="Permanent link">&para;</a></h1>
-<p>Le pattern introduit :</p>
-<ul>
-<li>une table supplémentaire</li>
-<li>un composant de publication</li>
-<li>une complexité légèrement supérieure</li>
-</ul>
-<p>Cependant cette complexité est généralement
-acceptable dans les architectures distribuées.</p>
-<hr />
-<h1 id="interaction-avec-dautres-patterns">Interaction avec d'autres patterns<a class="headerlink" href="#interaction-avec-dautres-patterns" title="Permanent link">&para;</a></h1>
-<p>Le Outbox Pattern fonctionne généralement
-avec d'autres mécanismes de fiabilité :</p>
-<ul>
-<li>Retry</li>
-<li>Dead Letter Topics</li>
-<li>Idempotent Consumers</li>
-</ul>
-<p>Ces patterns combinés permettent de construire
-des systèmes distribués robustes.</p>
-<hr />
-<h1 id="alternatives">Alternatives<a class="headerlink" href="#alternatives" title="Permanent link">&para;</a></h1>
-<h2 id="publication-directe">Publication directe<a class="headerlink" href="#publication-directe" title="Permanent link">&para;</a></h2>
-<p>Publier directement dans Kafka
-après la transaction est plus simple
-mais expose au problème du dual write.</p>
-<hr />
-<h2 id="transactions-distribuees">Transactions distribuées<a class="headerlink" href="#transactions-distribuees" title="Permanent link">&para;</a></h2>
-<p>Certaines technologies proposent
-des transactions distribuées.</p>
-<p>Cependant elles sont souvent :</p>
-<ul>
-<li>complexes</li>
-<li>difficiles à maintenir</li>
-<li>peu compatibles avec Kafka</li>
-</ul>
-<hr />
-<h1 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h1>
-<p>Le Outbox Pattern est une pratique largement
-adoptée dans les architectures event-driven.</p>
-<p>Il permet de garantir la cohérence
-entre la base de données et les événements
-publiés dans le système.</p>
-<p>Associé à des mécanismes comme
-Retry, DLT et Idempotence,
-il constitue un pilier de la fiabilité
-des systèmes distribués.</p>
+<div class="highlight"><pre><span></span><code>flowchart LR
+    A --&gt; B
+</code></pre></div>
 
 
 
@@ -1471,10 +1229,10 @@ des systèmes distribués.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
