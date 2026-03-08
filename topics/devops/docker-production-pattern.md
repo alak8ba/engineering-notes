@@ -91,3 +91,122 @@ Exemple dans docker-compose :
 ``` DockerFile
 read_only: true
 ```
+
+Cela empêche l'écriture de fichiers
+malveillants dans le conteneur.
+
+---
+
+# Répertoires temporaires (tmpfs)
+
+Les répertoires temporaires peuvent être
+placés en mémoire.
+
+Exemple :
+``` DockerFile
+tmpfs:
+
+/tmp
+```
+
+Avantages :
+
+- améliore les performances
+- empêche la persistance de fichiers
+
+---
+
+# Réseau Docker
+
+Les services internes doivent communiquer
+via un réseau Docker interne.
+
+Exemple :
+``` DockerFile
+networks:
+backend-network
+```
+
+Les bases de données et brokers
+ne doivent pas être exposés publiquement.
+
+---
+
+# Gestion des variables d’environnement
+
+Les configurations doivent être injectées
+via des variables d’environnement.
+
+Exemple :
+``` DockerFile
+SPRING_PROFILES_ACTIVE=prod
+DATABASE_URL=postgres://...
+```
+
+Cela permet :
+
+- de séparer configuration et code
+- d’adapter facilement les environnements
+
+---
+
+# Healthchecks
+
+Les conteneurs doivent exposer
+un mécanisme de vérification de santé.
+
+Exemple :
+``` DockerFile
+healthcheck:
+test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+```
+
+Les orchestrateurs peuvent utiliser ces
+informations pour redémarrer les conteneurs.
+
+---
+
+# Logs
+
+Les applications doivent écrire leurs logs
+sur la sortie standard.
+
+Exemple :
+``` DockerFile
+stdout
+stderr
+```
+
+Cela permet aux systèmes d’orchestration
+de collecter les logs.
+
+---
+
+# Avantages
+
+Cette approche apporte :
+
+- sécurité renforcée
+- images plus petites
+- déploiements reproductibles
+- meilleure observabilité
+
+---
+
+# Limites
+
+La configuration peut devenir plus complexe.
+
+Certaines applications doivent être adaptées
+pour fonctionner avec un filesystem en lecture seule.
+
+---
+
+# Conclusion
+
+Docker est un outil puissant pour déployer
+des applications backend modernes.
+
+En appliquant ces bonnes pratiques,
+il est possible de construire des conteneurs
+sécurisés, portables et adaptés à la production.
