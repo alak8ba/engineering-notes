@@ -113,7 +113,7 @@ sur les services backend.
 # Exemple avec Nginx
 
 Configuration simplifiée :
-``` json
+``` Dockerfile
 server {
 listen 443 ssl;
 
