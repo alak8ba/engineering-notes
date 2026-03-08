@@ -36,13 +36,8 @@ Backend --> Kafka
 Kafka --> Backend
 ```
 Description :
-
--L'utilisateur accède à l'application via le frontend React.
-
--Nginx sert de reverse proxy et gère HTTPS.
-
--Le backend Spring Boot traite les requêtes.
-
--PostgreSQL stocke les données métier.
-
--Kafka transporte les événements du système.
+- L'utilisateur accède à l'application via le frontend React.
+- Nginx sert de reverse proxy et gère HTTPS.
+- Le backend Spring Boot traite les requêtes.
+- PostgreSQL stocke les données métier.
+- Kafka transporte les événements du système.
