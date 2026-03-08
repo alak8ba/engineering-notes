@@ -1,9 +1,9 @@
-# Backend Engineering Notes
+## Engineering Handbook
 
-This repository contains technical notes about modern backend engineering.
+Documentation about backend architecture, event-driven systems
+and DevOps practices.
 
-It documents architecture patterns, distributed systems concepts,
-DevOps practices and real project decisions.
+➡️ [https://alak8ba.github.io/engineering-notes/](https://alak8ba.github.io/engineering-notes/)
 
 ---
 
