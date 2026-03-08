@@ -1,0 +1,2136 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Backend architecture, event-driven systems and DevOps patterns">
+      
+      
+        <meta name="author" content="Aliasoft">
+      
+      
+      
+        <link rel="prev" href="../../../topics/devops/ci-cd-pipeline-pattern/">
+      
+      
+        <link rel="next" href="../architecture-overview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Seaway Overview - Backend Engineering Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#seaway-project-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Backend Engineering Notes" class="md-header__button md-logo" aria-label="Backend Engineering Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Backend Engineering Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Seaway Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../topics/architecture/cqrs-pattern/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../topics/kafka/retry-and-dlt-pattern/" class="md-tabs__link">
+          
+  
+  
+  Event Driven Systems
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../topics/security/jwt-authentication-pattern/" class="md-tabs__link">
+          
+  
+  
+  Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../topics/devops/docker-production-pattern/" class="md-tabs__link">
+          
+  
+  
+  DevOps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Backend Engineering Notes" class="md-nav__button md-logo" aria-label="Backend Engineering Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Backend Engineering Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../topics/architecture/cqrs-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CQRS Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../topics/spring/hexagonal-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hexagonal Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Driven Systems
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Event Driven Systems
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../topics/kafka/retry-and-dlt-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retry and DLT Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../topics/kafka/idempotent-consumers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Idempotent Consumers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../topics/kafka/outbox-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outbox Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../topics/kafka/reliability-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reliability Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../topics/security/jwt-authentication-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JWT Authentication Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DevOps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DevOps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../topics/devops/docker-production-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker Production Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../topics/devops/container-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Container Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../topics/devops/reverse-proxy-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reverse Proxy Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../topics/devops/pull-based-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pull-based Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../topics/devops/ci-cd-pipeline-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Pipeline Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seaway Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seaway Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contexte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contexte
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-du-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectifs du projet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vision-globale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vision globale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-technique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack technique
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stack technique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Messaging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qualite-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualité / Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture backend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-driven-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event-driven architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cqrs-leger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CQRS léger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-evenementiel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit événementiel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualite-et-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualité et tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploiement-et-environnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Déploiement et environnement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#securite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sécurité
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demarche-dingenierie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Démarche d’ingénierie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultat-global" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Résultat global
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-detaillee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation détaillée
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contexte-de-collaboration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contexte de collaboration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ci-cd-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contexte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contexte
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs-du-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectifs du projet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vision-globale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vision globale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-technique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stack technique
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stack technique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#messaging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Messaging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#persistence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Persistence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qualite-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualité / Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture backend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-driven-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event-driven architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cqrs-leger" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CQRS léger
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#audit-evenementiel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit événementiel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qualite-et-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Qualité et tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploiement-et-environnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Déploiement et environnement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#securite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sécurité
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demarche-dingenierie" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Démarche d’ingénierie
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultat-global" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Résultat global
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-detaillee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation détaillée
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contexte-de-collaboration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contexte de collaboration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="seaway-project-overview">Seaway — Project Overview<a class="headerlink" href="#seaway-project-overview" title="Permanent link">&para;</a></h1>
+<p>Projet backend / frontend conçu dans le cadre d’une collaboration
+technique autour d’architectures modernes orientées événements.</p>
+<hr />
+<h2 id="contexte">Contexte<a class="headerlink" href="#contexte" title="Permanent link">&para;</a></h2>
+<p>Seaway est un système backend / frontend conçu pour explorer
+et mettre en œuvre une architecture orientée événements basée
+sur Spring Boot, Kafka et une architecture hexagonale.</p>
+<p>Le projet vise à construire une base applicative robuste et
+évolutive tout en appliquant des pratiques d’ingénierie proches
+d’un environnement de production.</p>
+<hr />
+<h2 id="objectifs-du-projet">Objectifs du projet<a class="headerlink" href="#objectifs-du-projet" title="Permanent link">&para;</a></h2>
+<p>Les objectifs principaux de Seaway sont les suivants :</p>
+<ul>
+<li>construire un backend moderne orienté événements</li>
+<li>expérimenter une architecture hexagonale</li>
+<li>mettre en place une séparation claire entre write model et read model</li>
+<li>travailler avec Kafka dans un contexte métier réaliste</li>
+<li>améliorer la fiabilité via retry, idempotence et DLT</li>
+<li>mettre en place une base de tests sérieuse</li>
+<li>préparer un déploiement réaliste avec Docker</li>
+<li>documenter les décisions techniques et les apprentissages</li>
+</ul>
+<p>Le projet sert aussi de base pour structurer une documentation
+d’ingénierie réutilisable, potentiellement transformable plus tard
+en articles, documentation publique ou ebook technique.</p>
+<hr />
+<h2 id="vision-globale">Vision globale<a class="headerlink" href="#vision-globale" title="Permanent link">&para;</a></h2>
+<p>Seaway a été conçu comme un projet d’apprentissage avancé,
+mais avec une posture volontairement proche d’un contexte réel.</p>
+<p>Le projet couvre plusieurs dimensions :</p>
+<ul>
+<li>architecture backend</li>
+<li>event-driven design</li>
+<li>persistance</li>
+<li>qualité logicielle</li>
+<li>frontend moderne</li>
+<li>déploiement</li>
+<li>sécurité</li>
+<li>CI/CD</li>
+<li>documentation technique</li>
+</ul>
+<p>Cette approche permet de travailler non seulement le code,
+mais aussi la capacité à penser un système dans son ensemble.</p>
+<hr />
+<h2 id="stack-technique">Stack technique<a class="headerlink" href="#stack-technique" title="Permanent link">&para;</a></h2>
+<h3 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Java 21</li>
+<li>Spring Boot 3</li>
+<li>Spring Data JPA</li>
+<li>Spring Security</li>
+</ul>
+<h3 id="messaging">Messaging<a class="headerlink" href="#messaging" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Kafka</li>
+</ul>
+<h3 id="persistence">Persistence<a class="headerlink" href="#persistence" title="Permanent link">&para;</a></h3>
+<ul>
+<li>PostgreSQL</li>
+<li>H2 pour certains environnements de développement initiaux</li>
+<li>JSONB, enums, dates</li>
+<li>scripts SQL d’initialisation</li>
+</ul>
+<h3 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h3>
+<ul>
+<li>React</li>
+<li>Vite</li>
+<li>TypeScript</li>
+<li>Tailwind CSS</li>
+</ul>
+<h3 id="infrastructure">Infrastructure<a class="headerlink" href="#infrastructure" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Docker</li>
+<li>Docker Compose</li>
+<li>Nginx</li>
+<li>Certbot</li>
+<li>UFW</li>
+</ul>
+<h3 id="qualite-tests">Qualité / Tests<a class="headerlink" href="#qualite-tests" title="Permanent link">&para;</a></h3>
+<ul>
+<li>JUnit</li>
+<li>Spring Boot Test</li>
+<li>@WebMvcTest</li>
+<li>Embedded Kafka</li>
+<li>Testcontainers</li>
+</ul>
+<h3 id="cicd">CI/CD<a class="headerlink" href="#cicd" title="Permanent link">&para;</a></h3>
+<ul>
+<li>GitHub Actions</li>
+<li>GHCR</li>
+<li>Watchtower</li>
+</ul>
+<hr />
+<h2 id="architecture-backend">Architecture backend<a class="headerlink" href="#architecture-backend" title="Permanent link">&para;</a></h2>
+<p>Le backend suit une architecture hexagonale avec séparation claire entre :</p>
+<ul>
+<li>domain</li>
+<li>application</li>
+<li>infrastructure</li>
+</ul>
+<p>Le domaine porte les règles métier.
+L’application orchestre les cas d’usage.
+L’infrastructure implémente les détails techniques.</p>
+<p>Cette séparation permet :</p>
+<ul>
+<li>une meilleure testabilité</li>
+<li>une meilleure lisibilité</li>
+<li>un découplage entre métier et technique</li>
+<li>une base plus saine pour faire évoluer le projet</li>
+</ul>
+<p>Le système suit également une approche event-driven,
+avec Kafka comme bus d’événements métier.</p>
+<hr />
+<h2 id="event-driven-architecture">Event-driven architecture<a class="headerlink" href="#event-driven-architecture" title="Permanent link">&para;</a></h2>
+<p>Seaway utilise Kafka pour transporter des événements métier.</p>
+<p>Exemples :</p>
+<ul>
+<li>Created</li>
+<li>Updated</li>
+<li>Cancelled</li>
+<li>autres événements liés aux évolutions des agrégats</li>
+</ul>
+<p>Cette architecture a permis de travailler des sujets importants comme :</p>
+<ul>
+<li>découplage</li>
+<li>publication d’événements</li>
+<li>retry</li>
+<li>backoff</li>
+<li>Dead Letter Topics</li>
+<li>idempotence</li>
+<li>audit événementiel</li>
+</ul>
+<p>Une attention particulière a été portée à la résilience du traitement,
+afin d’éviter qu’un message en erreur ne bloque tout le flux.</p>
+<hr />
+<h2 id="cqrs-leger">CQRS léger<a class="headerlink" href="#cqrs-leger" title="Permanent link">&para;</a></h2>
+<p>Le projet applique une forme légère de CQRS :</p>
+<ul>
+<li>un write model pour les opérations métier</li>
+<li>un read model pour la consultation</li>
+</ul>
+<p>Le read model est principalement utilisé pour l’interface utilisateur,
+afin d’optimiser l’affichage et simplifier certaines lectures côté frontend.</p>
+<p>Cette séparation a permis de mieux comprendre :</p>
+<ul>
+<li>la différence entre écriture métier et lecture</li>
+<li>les compromis de duplication contrôlée</li>
+<li>l’intérêt d’un modèle adapté à l’usage</li>
+</ul>
+<hr />
+<h2 id="audit-evenementiel">Audit événementiel<a class="headerlink" href="#audit-evenementiel" title="Permanent link">&para;</a></h2>
+<p>Les événements métier sont persistés pour constituer
+une base de vérité fonctionnelle et permettre :</p>
+<ul>
+<li>la traçabilité</li>
+<li>l’analyse</li>
+<li>la compréhension de l’historique</li>
+<li>l’audit des changements</li>
+</ul>
+<p>Cette démarche renforce la lisibilité du système et prépare
+des usages futurs autour de l’observabilité et du diagnostic.</p>
+<hr />
+<h2 id="frontend_1">Frontend<a class="headerlink" href="#frontend_1" title="Permanent link">&para;</a></h2>
+<p>Le frontend de Seaway est développé avec :</p>
+<ul>
+<li>React</li>
+<li>Vite</li>
+<li>TypeScript</li>
+<li>Tailwind CSS</li>
+</ul>
+<p>L’interface est orientée dashboard / monitoring.</p>
+<p>Fonctionnalités principales déjà travaillées :</p>
+<ul>
+<li>liste des séjours via le read model</li>
+<li>détail d’un séjour</li>
+<li>création / mise à jour</li>
+<li>amélioration progressive de l’UI / UX</li>
+<li>structuration d’un design system à base de tokens CSS</li>
+</ul>
+<p>Une tentative d’intégration SSE a été faite pour afficher
+des événements en temps réel. La partie backend était fonctionnelle,
+mais l’intégration frontend a été abandonnée temporairement
+par pragmatisme.</p>
+<hr />
+<h2 id="qualite-et-tests">Qualité et tests<a class="headerlink" href="#qualite-et-tests" title="Permanent link">&para;</a></h2>
+<p>Le projet a permis de mettre en place progressivement :</p>
+<ul>
+<li>des tests unitaires</li>
+<li>des tests de contrôleurs avec @WebMvcTest</li>
+<li>des tests Kafka</li>
+<li>des tests d’intégration avec Testcontainers</li>
+</ul>
+<p>De nombreux problèmes réels ont été rencontrés et traités, notamment :</p>
+<ul>
+<li>conflits de beans Spring</li>
+<li>problèmes de profils</li>
+<li>sérialisation Jackson</li>
+<li>binding Kafka</li>
+<li>backoff mal configuré</li>
+<li>incompatibilités H2 / PostgreSQL</li>
+<li>environnement Docker non reconnu par Testcontainers</li>
+</ul>
+<p>Le projet a donc servi de terrain concret pour développer
+une démarche de debug structurée et persévérante.</p>
+<hr />
+<h2 id="deploiement-et-environnement">Déploiement et environnement<a class="headerlink" href="#deploiement-et-environnement" title="Permanent link">&para;</a></h2>
+<p>Le projet est conteneurisé avec Docker et Docker Compose.</p>
+<p>Services principaux :</p>
+<ul>
+<li>backend</li>
+<li>frontend</li>
+<li>PostgreSQL</li>
+<li>Kafka</li>
+<li>Zookeeper</li>
+</ul>
+<p>Des outils annexes ont aussi été utilisés selon les besoins :</p>
+<ul>
+<li>pgAdmin / Adminer</li>
+<li>Kafka UI</li>
+</ul>
+<p>Le projet a progressivement évolué vers une préparation sérieuse
+à la production, avec une attention portée à :</p>
+<ul>
+<li>la séparation des environnements</li>
+<li>la sécurité des containers</li>
+<li>la cohérence de la configuration</li>
+<li>la reproductibilité</li>
+</ul>
+<hr />
+<h2 id="cicd_1">CI/CD<a class="headerlink" href="#cicd_1" title="Permanent link">&para;</a></h2>
+<p>La partie CI/CD a été mise en place dans une logique réaliste :</p>
+<ul>
+<li>GitHub Actions pour la CI</li>
+<li>build des images Docker</li>
+<li>publication vers GHCR</li>
+<li>déploiement pull-based</li>
+<li>mise à jour automatique via Watchtower</li>
+</ul>
+<p>Des principes importants ont été retenus :</p>
+<ul>
+<li>séparation entre CI, release et déploiement</li>
+<li>artefacts immuables</li>
+<li>production qui consomme des images mais ne build jamais</li>
+<li>déploiement volontaire et contrôlé</li>
+<li>sécurité cohérente avec une infra HTTPS-only</li>
+</ul>
+<p>Le sujet CI/CD n’est donc plus seulement “à venir” :
+il fait maintenant partie intégrante du projet.</p>
+<hr />
+<h2 id="securite">Sécurité<a class="headerlink" href="#securite" title="Permanent link">&para;</a></h2>
+<p>Le projet a aussi intégré une réflexion sécurité, avec notamment :</p>
+<ul>
+<li>Spring Security en mode stateless</li>
+<li>désactivation de CSRF pour l’API REST</li>
+<li>reverse proxy Nginx</li>
+<li>HTTPS avec Let’s Encrypt</li>
+<li>headers de sécurité</li>
+<li>user non-root dans les containers</li>
+<li>filesystem read-only</li>
+<li>services internes non exposés publiquement</li>
+<li>UFW avec politique restrictive</li>
+</ul>
+<p>Cette partie a contribué à faire évoluer le projet
+d’un simple prototype vers une base beaucoup plus crédible.</p>
+<hr />
+<h2 id="demarche-dingenierie">Démarche d’ingénierie<a class="headerlink" href="#demarche-dingenierie" title="Permanent link">&para;</a></h2>
+<p>Au-delà des technologies, Seaway représente une démarche :</p>
+<ul>
+<li>construire</li>
+<li>tester</li>
+<li>comprendre</li>
+<li>corriger</li>
+<li>documenter</li>
+<li>améliorer</li>
+</ul>
+<p>Le projet a été mené avec une logique de progression réelle,
+en traitant les problèmes au fur et à mesure, sans chercher
+à masquer la complexité.</p>
+<p>Il sert aujourd’hui à la fois :</p>
+<ul>
+<li>de preuve de compétences</li>
+<li>de base de documentation</li>
+<li>de support d’apprentissage</li>
+<li>de fondation pour de futurs contenus techniques</li>
+</ul>
+<hr />
+<h2 id="resultat-global">Résultat global<a class="headerlink" href="#resultat-global" title="Permanent link">&para;</a></h2>
+<p>Seaway est un projet cohérent, ambitieux et réaliste,
+qui a permis de développer des compétences transverses en :</p>
+<ul>
+<li>backend avancé</li>
+<li>architecture</li>
+<li>messaging</li>
+<li>qualité</li>
+<li>frontend moderne</li>
+<li>sécurité</li>
+<li>déploiement</li>
+<li>CI/CD</li>
+</ul>
+<p>Le projet est désormais dans une phase de consolidation continue,
+avec des axes d’amélioration possibles sur :</p>
+<ul>
+<li>observabilité</li>
+<li>monitoring</li>
+<li>authentification future</li>
+<li>approfondissement DDD</li>
+<li>enrichissement métier</li>
+</ul>
+<hr />
+<h2 id="documentation-detaillee">Documentation détaillée<a class="headerlink" href="#documentation-detaillee" title="Permanent link">&para;</a></h2>
+<p>Certaines dimensions du projet sont détaillées dans des notes dédiées :</p>
+<ul>
+<li><code>architecture-overview.md</code></li>
+<li><code>ci-cd-overview.md</code></li>
+<li><code>security-overview.md</code></li>
+</ul>
+<p>D’autres notes pourront être ajoutées ensuite, par exemple sur :</p>
+<ul>
+<li>Kafka / DLT</li>
+<li>tests d’intégration</li>
+<li>design system frontend</li>
+<li>décisions d’architecture</li>
+<li>agrégats métier</li>
+</ul>
+<h2 id="contexte-de-collaboration">Contexte de collaboration<a class="headerlink" href="#contexte-de-collaboration" title="Permanent link">&para;</a></h2>
+<p>Le projet a été mené en collaboration avec une société
+spécialisée dans le développement de solutions SaaS.</p>
+<p>Cette collaboration a permis de confronter les choix
+techniques à des contraintes proches d’un environnement
+professionnel réel, notamment en matière de :</p>
+<ul>
+<li>architecture</li>
+<li>fiabilité</li>
+<li>déploiement</li>
+<li>sécurité</li>
+<li>organisation du code</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
