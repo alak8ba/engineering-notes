@@ -7,10 +7,20 @@ theme:
     features:
         - navigation.tabs
         - navigation.sections
+        - content.code.copy
         - navigation.expand
         - search.highlight
-        - content.code.copy
-
+    palette:
+      - scheme: default
+        primary: blue
+        toggle:
+          icon: material/weather-night
+          name: Dark mode
+      - scheme: slate
+        primary: blue
+        toggle:
+          icon: material/weather-sunny
+          name: Light mode
 markdown_extensions:
     - admonition
     - tables
@@ -25,29 +35,23 @@ extra_javascript:
     - https://unpkg.com/mermaid/dist/mermaid.min.js
 
 nav:
-
     - Home: index.md
-
     - Architecture:
           - CQRS Pattern: topics/architecture/cqrs-pattern.md
           - Hexagonal Architecture: topics/spring/hexagonal-architecture.md
-
     - Event Driven Systems:
           - Retry and DLT Pattern: topics/kafka/retry-and-dlt-pattern.md
           - Idempotent Consumers: topics/kafka/idempotent-consumers.md
           - Outbox Pattern: topics/kafka/outbox-pattern.md
           - Reliability Patterns: topics/kafka/reliability-patterns.md
-
     - Security:
           - JWT Authentication Pattern: topics/security/jwt-authentication-pattern.md
-
     - DevOps:
           - Docker Production Pattern: topics/devops/docker-production-pattern.md
           - Container Security: topics/devops/container-security.md
           - Reverse Proxy Pattern: topics/devops/reverse-proxy-pattern.md
           - Pull-based Deployment: topics/devops/pull-based-deployment.md
           - CI/CD Pipeline Pattern: topics/devops/ci-cd-pipeline-pattern.md
-
     - Projects:
           - Seaway Overview: projects/seaway/project-overview.md
           - Architecture Overview: projects/seaway/architecture-overview.md
