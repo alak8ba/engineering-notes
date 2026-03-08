@@ -2,16 +2,18 @@
 
 ## Contexte général
 
-Seaway est un projet backend / frontend développé from scratch,
-pensé comme un vrai produit technique et non comme un simple exercice.
+Seaway est un projet backend / frontend développé dans le cadre
+d’une collaboration avec une société basée à Paris spécialisée
+dans le développement de solutions SaaS.
 
-Le projet a servi de terrain d’apprentissage avancé, mais aussi
-de support de montée en compétences professionnelle, avec une
-approche orientée architecture, fiabilité, qualité et déploiement.
+Le projet vise à concevoir et expérimenter une architecture
+backend moderne orientée événements, tout en appliquant
+des pratiques d’ingénierie proches d’un contexte de production.
 
-L’objectif n’était pas seulement de faire fonctionner une application,
-mais de construire un système cohérent, réaliste et défendable
-techniquement.
+L'objectif est de construire un système robuste et évolutif,
+capable de servir de base à des fonctionnalités métier réelles,
+tout en structurant les choix techniques et l'architecture
+de manière claire et maintenable.
 
 ---
 
