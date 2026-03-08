@@ -57,3 +57,37 @@ COPY --from=build /app/target/app.jar app.jar
 
 ENTRYPOINT ["java","-jar","/app.jar"]
 ```
+Avantages :
+
+- image plus petite
+- moins de dépendances
+- surface d’attaque réduite
+
+---
+
+# Utilisateur non-root
+
+Les conteneurs ne doivent pas s'exécuter avec l'utilisateur root.
+
+Exemple :
+``` DockerFile
+RUN useradd -u 10001 appuser
+USER appuser
+```
+
+Avantages :
+
+- limite les privilèges
+- réduit les risques en cas de compromission
+
+---
+
+# Filesystem en lecture seule
+
+En production, le filesystem du conteneur
+peut être configuré en lecture seule.
+
+Exemple dans docker-compose :
+``` DockerFile
+read_only: true
+```
