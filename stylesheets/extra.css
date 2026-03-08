@@ -1,22 +1,24 @@
 /* améliorer la lisibilité du texte */
-.md-typeset {
-    font-size: 0.9rem;
-    line-height: 1.7;
-}
+/*.md-typeset {*/
+/*    font-size: 0.9rem;*/
+/*    line-height: 1.7;*/
+/*}*/
 
 /* titres plus visibles */
-.md-typeset h1 {
-    font-weight: 700;
-}
+/*.md-typeset h1 {*/
+/*    font-weight: 700;*/
+/*}*/
 
-.md-typeset h2 {
-    font-weight: 600;
-}
+/*.md-typeset h2 {*/
+/*    font-weight: 600;*/
+/*}*/
 
 /* header style plus moderne */
 .md-header {
-    background-color: #0f172a;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    /*background-color: #0f172a;*/
+    /*background-color: hsla(var(--md-hue), 15%, 18%,0.54);*/
+    background-color: hsla(var(--md-hue), 15%, 18%, 0.9);
+    /*box-shadow: 0 2px 8px rgba(0,0,0,0.15);*/
 }
 
 /* titre du site */
@@ -45,4 +47,15 @@
 }
 .md-typeset table {
     font-size: 0.9rem;
+}
+
+body {
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+code, pre {
+    font-family: "JetBrains Mono", monospace;
+}
+.md-footer {
+    background-color: #0f172a;
 }
