@@ -1,5 +1,21 @@
 # JWT Authentication Pattern (SPA + REST API)
 
+## Authentication Flow
+
+```mermaid
+sequenceDiagram
+participant User
+participant Frontend
+participant Backend
+participant DB
+
+User->>Frontend: Login
+Frontend->>Backend: POST /auth/login
+Backend->>DB: Verify credentials
+Backend->>Frontend: Access + Refresh tokens
+Frontend->>Backend: API request
+Backend->>Frontend: Response
+```
 ## Contexte
 
 Les applications modernes utilisent souvent une architecture
