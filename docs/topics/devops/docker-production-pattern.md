@@ -44,7 +44,7 @@ Objectif :
 - produire une image finale minimale
 
 Exemple :
-``` DockerFile
+```DockerFile
 FROM maven:3.9-eclipse-temurin-21 AS build
 
 WORKDIR /app
@@ -70,7 +70,7 @@ Avantages :
 Les conteneurs ne doivent pas s'exécuter avec l'utilisateur root.
 
 Exemple :
-``` DockerFile
+```DockerFile
 RUN useradd -u 10001 appuser
 USER appuser
 ```
@@ -88,7 +88,7 @@ En production, le filesystem du conteneur
 peut être configuré en lecture seule.
 
 Exemple dans docker-compose :
-``` DockerFile
+```DockerFile
 read_only: true
 ```
 
@@ -103,7 +103,7 @@ Les répertoires temporaires peuvent être
 placés en mémoire.
 
 Exemple :
-``` DockerFile
+```DockerFile
 tmpfs:
 
 /tmp

@@ -38,7 +38,7 @@ plusieurs fois produit le même résultat que
 son exécution une seule fois.
 
 Exemple :
-```
+```less
 traiter(eventId=123)
 traiter(eventId=123)
 traiter(eventId=123)
@@ -75,7 +75,7 @@ Une stratégie consiste à enregistrer
 les identifiants des événements déjà traités.
 
 Exemple de table :
-```
+```less
 processed_events
 
 event_id
@@ -104,7 +104,7 @@ Exemple :
 - vérifier l’état actuel avant modification
 
 Exemple :
-``` java
+```java
 if (sejour.exists(id)) {
 ignore event
 }
@@ -118,7 +118,7 @@ Dans une architecture orientée événements,
 chaque agrégat peut posséder une version.
 
 Un événement contient :
-```
+```less
 aggregate_id
 version
 ```
@@ -161,7 +161,7 @@ Pour construire des consumers robustes :
 # Exemple simplifié
 
 Pseudo-code :
-``` java
+```java
 if processedEvents.contains(eventId):
 return
 

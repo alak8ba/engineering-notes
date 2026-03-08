@@ -35,7 +35,7 @@ Le retry est généralement configuré avec :
 - un délai entre les tentatives (backoff)
 
 Exemple :
-```
+```less
 3 tentatives
 backoff : 1s → 5s → 10s
 ```
@@ -53,11 +53,11 @@ Un Dead Letter Topic est un topic Kafka dédié
 au stockage des messages en erreur.
 
 Convention fréquente :
-```
+```bash
 <topic>.DLT
 ```
 Exemple :
-```
+```bash
 seaway.events
 seaway.events.DLT
 ```
@@ -84,15 +84,15 @@ Spring Kafka propose un mécanisme intégré
 pour gérer les retries et les DLT.
 
 Le composant principal est :
-```
+```bash
 DefaultErrorHandler
 ```
 Il peut être combiné avec :
-```
+```java
 DeadLetterPublishingRecoverer
 ```
 Exemple simplifié :
-``` java
+```java
 DefaultErrorHandler errorHandler =
 new DefaultErrorHandler(
 new DeadLetterPublishingRecoverer(kafkaTemplate),

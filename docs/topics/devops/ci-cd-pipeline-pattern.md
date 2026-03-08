@@ -31,17 +31,11 @@ Chaque modification déclenche une pipeline
 qui vérifie que l'application reste fonctionnelle.
 
 Étapes typiques :
-```
-  Push code
-    |
-    v
-  Build
-    |
-    v
-  Tests
-    |
-    v
-Artifacts
+```mermaid
+flowchart TD
+    A[Push code] --> B[Build]
+    B --> C[Tests]
+    C --> D[(Artifacts)]
 ```
 La CI permet de détecter rapidement :
 
@@ -57,14 +51,10 @@ La **Continuous Deployment** automatise la mise
 à disposition des nouvelles versions.
 
 Flux simplifié :
-```
-        CI
-        |
-        v
-Container Registry
-        |
-        v
-    Deployment
+```mermaid
+flowchart TD
+    CI[CI Pipeline] -->|Build & Push Image| REG[Container Registry]
+    REG -->|Pull Image| DEP[Deployment / Kubernetes]
 ```
 
 Les nouvelles versions peuvent être
@@ -83,7 +73,7 @@ Compilation de l’application.
 
 Exemple :
 
-``` bash
+```bash
 mvn package
 npm build
 ```
@@ -109,7 +99,7 @@ Dans les architectures conteneurisées,
 la pipeline construit une image Docker.
 
 Exemple :
-``` bash
+```bash
 docker build
 ```
 
@@ -138,7 +128,7 @@ Le système de production récupère
 la nouvelle version.
 
 Exemple :
-``` bash
+```bash
 docker compose pull
 docker compose up -d
 ```
@@ -151,23 +141,13 @@ avec des outils de déploiement.
 # Exemple avec GitHub Actions
 
 Pipeline simplifiée :
-```
-    Developer
-        |
-        v
-GitHub Repository
-        |
-        v
-  GitHub Actions
-        |
-        v
-  Docker Build
-        |
-        v
-Container Registry
-        |
-        v
-Production Server
+```mermaid
+flowchart TD
+    DEV[Developer] -->|git push| REPO[GitHub Repository]
+    REPO --> CI[GitHub Actions]
+    CI --> BUILD[Build Docker Image]
+    BUILD --> REG[(Container Registry)]
+    REG --> DEPLOY[Production Server]
 ```
 
 GitHub Actions permet d’automatiser
@@ -204,7 +184,7 @@ ne doivent pas être modifiés après publication.
 
 Il est recommandé d’utiliser
 plusieurs environnements :
-```
+```bash
 dev
 test
 production

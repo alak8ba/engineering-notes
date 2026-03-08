@@ -30,7 +30,7 @@ propose de séparer ces responsabilités.
 # Principe
 
 CQRS consiste à séparer :
-``` java
+```java
 Commands (écriture)
 Queries (lecture)
 ```
@@ -92,26 +92,14 @@ pas de logique métier complexe.
 ---
 
 # Architecture simplifiée
-``` 
-    Command API
-         |
-         v
-    Domain Model
-         |
-         v
-     Events
-         |
-         v
-    Event Bus (Kafka)
-         |
-         v
-    Projection
-         |
-         v
-     Read Model
-         |
-         v
-      Query API
+```mermaid
+flowchart TD
+    CMD[Command API] --> DOMAIN[Domain Model]
+    DOMAIN --> EVENTS[Domain Events]
+    EVENTS --> BUS[(Event Bus - Kafka)]
+    BUS --> PROJ[Projection / Event Handler]
+    PROJ --> READ[(Read Model)]
+    READ --> QUERY[Query API]
 ```
 
 Les événements permettent

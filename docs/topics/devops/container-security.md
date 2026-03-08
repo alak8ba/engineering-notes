@@ -40,7 +40,7 @@ Les conteneurs ne doivent pas
 s’exécuter avec l’utilisateur root.
 
 Exemple dans un Dockerfile :
-``` Dockerfile
+```Dockerfile
 RUN useradd -u 10001 appuser
 USER appuser
 ```
@@ -57,7 +57,7 @@ Les conteneurs applicatifs peuvent être
 configurés avec un filesystem en lecture seule.
 
 Exemple :
-``` Dockerfile
+```Dockerfile
 read_only: true
 ```
 Seules certaines zones doivent rester
@@ -71,9 +71,8 @@ Les répertoires temporaires peuvent être
 montés en mémoire avec **tmpfs**.
 
 Exemple :
-``` Dockerfile
+```Dockerfile
 tmpfs:
-
 /tmp
 ```
 
@@ -106,7 +105,7 @@ Seuls les ports nécessaires doivent
 être exposés.
 
 Exemple typique :
-``` Dockerfile
+```bash
 443 → HTTPS
 80 → redirection HTTP
 ```

@@ -2,61 +2,127 @@
 
 ## Objectif
 
-Mettre en place une infrastructure sécurisée par défaut
-pour l'application Seaway.
+Mettre en place une architecture de sécurité
+défensive par défaut pour l'application Seaway.
+
+Les principes suivis :
+
+- authentification stateless
+- séparation frontend / backend
+- exposition minimale des services
+- défense en profondeur
+
+```mermaid
+flowchart LR
+
+User --> Frontend
+Frontend --> Nginx
+Nginx --> Backend
+Backend --> PostgreSQL
+Backend --> Kafka
+```
+---
+
+# Authentification
+
+Seaway utilise une authentification basée sur **JWT**.
+
+Architecture :
+
+- Access Token (durée de vie courte)
+- Refresh Token (renouvellement de session)
+
+Les tokens sont stockés dans :
+
+- cookies **HttpOnly**
+- cookies **Secure**
+
+Flux d'authentification :
+
+1. `POST /auth/login`
+2. génération access token + refresh token
+3. stockage dans cookies sécurisés
+4. appels API authentifiés via cookies
+5. `POST /auth/refresh` pour renouveler l'access token
 
 ---
 
-## Backend
+# Autorisation
 
-Spring Security configuré en mode stateless.
+Le système utilise un modèle **RBAC (Role-Based Access Control)**.
 
-Choix actuels :
+Rôles actuels :
 
-- CSRF désactivé (API REST)
+- `ADMIN`
+- `USER`
+
+L'autorisation est appliquée via :
+
+- Spring Security
+- contrôles d'accès au niveau des endpoints
+
+---
+
+# Backend Security
+
+Spring Security est configuré en **mode stateless**.
+
+Principes :
+
 - sessions désactivées
-- endpoints API temporairement publics
+- authentification via JWT
+- filtres personnalisés pour validation du token
 
-Préparation pour une future authentification JWT.
+Protections :
+
+- password hashing via **BCrypt**
+- optimistic locking (`@Version`)
+- validation des entrées
 
 ---
 
-## Reverse Proxy
+# Reverse Proxy
 
-Nginx assure :
+Nginx agit comme point d'entrée unique.
+
+Responsabilités :
 
 - terminaison HTTPS
 - reverse proxy vers le backend
 - protection contre certaines attaques
 
-Headers de sécurité :
+Headers de sécurité activés :
 
-- X-Frame-Options
-- Strict-Transport-Security
-- Referrer-Policy
-- Permissions-Policy
-
----
-
-## Docker Security
-
-Containers exécutés :
-
-- avec un user non-root
-- filesystem read-only
-- /tmp en tmpfs
+- `X-Frame-Options`
+- `X-Content-Type-Options`
+- `Strict-Transport-Security`
+- `Referrer-Policy`
+- `Permissions-Policy`
 
 ---
 
-## Firewall
+# Docker Security
 
-UFW configuré avec une politique restrictive.
+Les conteneurs sont configurés selon le principe
+du **moindre privilège**.
 
-Ports ouverts :
+Mesures appliquées :
 
-- 22 (SSH)
-- 80 (ACME)
-- 443 (HTTPS)
+- exécution avec un utilisateur non-root
+- filesystem en lecture seule
+- `/tmp` monté en `tmpfs`
+
+---
+
+# Firewall
+
+Le firewall UFW applique une politique restrictive.
+
+Ports exposés :
+
+- `22` — SSH
+- `80` — ACME challenge (certificats)
+- `443` — HTTPS
 
 Ports internes non exposés :
 
@@ -65,10 +131,29 @@ Ports internes non exposés :
 
 ---
 
-## Infrastructure
+# Isolation réseau
 
 Les services sensibles ne sont accessibles
 que via le réseau Docker interne.
 
-Kafka et PostgreSQL ne sont jamais exposés
-publiquement.
+- PostgreSQL
+- Kafka
+- services internes
+
+Aucun de ces services n'est exposé publiquement.
+
+---
+
+# Défense en profondeur
+
+La sécurité repose sur plusieurs couches :
+
+1. authentification JWT
+2. autorisation RBAC
+3. reverse proxy sécurisé
+4. isolation réseau
+5. conteneurs sécurisés
+6. firewall restrictif
+
+Cette approche limite l'impact
+d'une compromission éventuelle.

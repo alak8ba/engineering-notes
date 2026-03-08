@@ -50,26 +50,12 @@ Les technologies externes deviennent des
 dépendances périphériques.
 
 Schéma simplifié :
-```
-    +---------------------+
-    |     Web Adapter     |
-    +---------------------+
-              |
-              v
-    +---------------------+
-    |    Application      |
-    |      (Use Cases)    |
-    +---------------------+
-              |
-              v
-    +---------------------+
-    |       Domain        |
-    +---------------------+
-              ^
-              |
-    +---------------------+
-    |  Persistence Adapter |
-    +---------------------+
+```mermaid
+flowchart TD
+    WA[Web Adapter / Controller] --> APP[Application Use Cases]
+    APP --> DOM[Domain Model]
+
+    DOM <-->|Repository Port| PA[Persistence Adapter]
 ```
 
 Le domaine ne dépend d'aucune technologie.
@@ -98,7 +84,7 @@ Il ne dépend pas :
 - de frameworks web
 
 Exemple :
-``` java
+```java
 Sejour
 Service
 Schedule
@@ -118,7 +104,7 @@ Elle orchestre :
 - les transactions
 
 Exemples de use cases :
-``` java
+```java
 CreateSejour
 UpdateSejour
 ScheduleService
@@ -146,7 +132,7 @@ qui peuvent être déclenchées
 sur le système.
 
 Exemple :
-``` java
+```java
 SejourRepository
 EventPublisher
 ```

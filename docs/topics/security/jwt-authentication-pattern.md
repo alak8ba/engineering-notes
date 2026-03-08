@@ -12,10 +12,12 @@ participant DB
 User->>Frontend: Login
 Frontend->>Backend: POST /auth/login
 Backend->>DB: Verify credentials
-Backend->>Frontend: Access + Refresh tokens
-Frontend->>Backend: API request
-Backend->>Frontend: Response
+DB-->>Backend: Credentials valid
+Backend-->>Frontend: Access + Refresh tokens
+Frontend->>Backend: API request (with Access token)
+Backend-->>Frontend: Response
 ```
+
 ## Contexte
 
 Les applications modernes utilisent souvent une architecture
@@ -64,19 +66,13 @@ authentifier les requêtes.
 # Architecture typique
 
 Architecture simplifiée :
-```
-     User
-      |
-      v
-Frontend (React)
-      |
-      v
- Backend API
-      |
-      v
-  Database
-```
 
+```mermaid
+flowchart TD
+    U[User / Browser] --> F[Frontend - React App]
+    F -->|HTTP Requests| B[Backend API]
+    B -->|Queries| D[(Database)]
+```
 Le frontend communique uniquement
 avec l'API.
 

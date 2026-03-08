@@ -16,24 +16,18 @@ Les diagrammes permettent de comprendre rapidement :
 
 ```mermaid
 flowchart LR
-
-User[Utilisateur]
-
-Frontend[React Frontend]
-Nginx[Nginx Reverse Proxy]
-Backend[Spring Boot API]
-
-DB[(PostgreSQL)]
-Kafka[(Kafka)]
-
-User --> Frontend
-Frontend --> Nginx
-Nginx --> Backend
-
-Backend --> DB
-Backend --> Kafka
-
-Kafka --> Backend
+    User[Utilisateur]
+    Frontend[React Frontend]
+    Nginx[Nginx Reverse Proxy]
+    Backend[Spring Boot API]
+    DB[(PostgreSQL)]
+    Kafka[(Kafka)]
+    User --> Frontend
+    Frontend --> Nginx
+    Nginx --> Backend
+    Backend --> DB
+    Backend --> Kafka
+    Kafka --> Backend
 ```
 Description :
 - L'utilisateur accède à l'application via le frontend React.

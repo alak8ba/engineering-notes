@@ -55,28 +55,21 @@ un pipeline événementiel robuste.
 # Vue d’ensemble
 
 Architecture simplifiée :
-```
-     Client
-        |
-        v
-     Service  
-        |
-        +--> Database
-        |
-        +--> Outbox
-        |
-        v
-      Kafka
-        |
-        v
-     Consumer
-        |
-        +--> Retry
-        |
-        +--> DLT
-        |
-        v
-  Business Logic
+```mermaid
+flowchart TD
+    C[Client] --> S[Service]
+
+    S --> DB[(Database)]
+    S --> OB[(Outbox Table)]
+
+    OB --> PUB[Outbox Publisher]
+    PUB --> K[(Kafka)]
+
+    K --> CON[Consumer]
+
+    CON --> BL[Business Logic]
+    CON --> R[Retry Queue]
+    CON --> D[Dead Letter Topic]
 ```
 ---
 
@@ -112,7 +105,7 @@ Le retry permet de réessayer le traitement
 d’un message après un délai.
 
 Exemple :
-```
+```bash
 Retry 1 → 1 seconde
 Retry 2 → 5 secondes
 Retry 3 → 10 secondes
@@ -128,12 +121,12 @@ Si un message échoue après tous les retries,
 il est envoyé dans un **Dead Letter Topic**.
 
 Convention :
-```
+```bash
 <topic>.DLT
 ```
 
 Exemple :
-```
+```bash
 seaway.events
 seaway.events.DLT
 ```

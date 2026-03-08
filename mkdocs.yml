@@ -3,45 +3,65 @@ site_description: Backend architecture, event-driven systems and DevOps patterns
 site_author: Aliasoft
 extra_css:
   - stylesheets/extra.css
+
+#extra_javascript:
+#  - https://unpkg.com/mermaid/dist/mermaid.min.js
+plugins:
+  - search
+  - mermaid2:
+      arguments:
+        theme: default
+extra:
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.tabbed
+  - pymdownx.tasklist
+
 theme:
     name: material
     favicon: null
     logo: null
     features:
-        - navigation.tabs
-        - navigation.sections
-        - content.code.copy
-        - navigation.expand
-        - search.highlight
+      - navigation.tabs
+      - navigation.sections
+      - navigation.expand
+      - navigation.top
+      - toc.follow
+      - content.code.copy
+      - search.highlight
+      - search.suggest
+
     palette:
       #  Colors:  blue  indigo  teal  cyan  deep purple
       - scheme: default
-        primary: indigo
-        accent: indigo
+        primary: cyan
+        accent: cyan
         toggle:
           icon: material/weather-night
           name: Dark mode
       - scheme: slate
-        primary: deep purple
-        accent: deep purple
+        primary: cyan
+        accent: cyan
         toggle:
           icon: material/weather-sunny
           name: Light mode
 
-
-
-markdown_extensions:
-    - admonition
-    - tables
-    - toc:
-          permalink: true
-    - pymdownx.superfences
-    - pymdownx.highlight
-    - pymdownx.details
-    - pymdownx.tabbed
-
-extra_javascript:
-    - https://unpkg.com/mermaid/dist/mermaid.min.js
 
 nav:
     - Home: index.md
@@ -66,3 +86,6 @@ nav:
           - Architecture Overview: projects/seaway/architecture-overview.md
           - CI/CD Overview: projects/seaway/ci-cd-overview.md
           - Security Overview: projects/seaway/security-overview.md
+
+copyright: >
+  © 2026 Aliasoft • Backend Engineering Notes

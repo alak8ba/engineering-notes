@@ -9,8 +9,10 @@ de production.
 Ce modèle est appelé **push-based deployment**.
 
 Exemple :
-```
-CI → SSH → serveur → déploiement
+```mermaid
+flowchart LR
+    CI[CI Pipeline] -->|SSH| S[Production Server]
+    S --> D[Deploy Application]
 ```
 
 Cependant, ce modèle présente plusieurs limites :
@@ -34,23 +36,13 @@ Au contraire, il récupère lui-même
 les nouvelles versions de l'application.
 
 Architecture simplifiée :
-```
-    Developer
-        |
-        v
-      GitHub
-        |
-        v
-    CI/CD (build)
-        |
-        v
-  Container Registry
-        |
-        v
-  Production Server
-        |
-        v
-  Docker Containers
+```mermaid
+flowchart TD
+    DEV[Developer] -->|Push code| GH[GitHub Repository]
+    GH --> CI[CI/CD Pipeline]
+    CI -->|Build & Push Image| REG[(Container Registry)]
+    REG -->|Pull Image| PS[Production Server]
+    PS --> DC[Docker Containers]
 ```
 
 Le serveur surveille les nouvelles images
@@ -63,7 +55,7 @@ et met à jour les services automatiquement.
 ## 1 — Push du code
 
 Le développeur pousse le code vers le repository.
-``` bash
+```bash
 git push
 ```
 
@@ -80,7 +72,7 @@ La CI :
 - publie les images dans un registry
 
 Exemple :
-``` bash
+```bash
 ghcr.io/my-org/backend:latest
 ```
 
@@ -106,7 +98,7 @@ Le serveur de production récupère
 les nouvelles images.
 
 Exemple :
-``` bash
+```bash
 docker compose pull
 docker compose up -d
 ```
@@ -128,7 +120,7 @@ Fonctionnement :
 3. redémarre le container
 
 Exemple de configuration :
-``` yml
+```yml
 com.centurylinklabs.watchtower.enable=true
 ```
 

@@ -18,14 +18,19 @@ Il agit comme un point d’entrée unique pour l’application.
 # Principe
 
 Architecture simplifiée :
-```
-                Client
-                  |
-                  v
-Reverse Proxy (Nginx / Traefik / HAProxy)
-                  |
-                  v
-          Backend Services
+```mermaid
+flowchart TD
+    CLIENT[Client]
+    PROXY[Reverse Proxy<br/>Nginx / Traefik / HAProxy]
+    subgraph Backend
+        S1[Auth Service]
+        S2[API Service]
+        S3[Worker Service]
+    end
+    CLIENT -->|HTTPS| PROXY
+    PROXY --> S1
+    PROXY --> S2
+    PROXY --> S3
 ```
 
 Le reverse proxy reçoit les requêtes HTTP/HTTPS
@@ -42,14 +47,10 @@ Un reverse proxy assure plusieurs fonctions importantes.
 Le reverse proxy gère le chiffrement HTTPS.
 
 Flux :
-```
-      Client HTTPS
-            |
-            v
-Reverse Proxy (TLS termination)
-            |
-            v
-      Backend HTTP
+```mermaid
+flowchart TD
+    C[Client] -->|HTTPS| RP[Reverse Proxy<br/>(TLS termination)]
+    RP -->|HTTP| B[Backend Service]
 ```
 
 Avantages :
@@ -65,7 +66,7 @@ Le reverse proxy peut diriger les requêtes
 vers différents services.
 
 Exemple :
-``` java
+```less
 /api → backend API
 /app → frontend SPA
 /metrics → monitoring
@@ -87,7 +88,7 @@ plusieurs mécanismes de sécurité :
 - blocage de certains endpoints
 
 Exemples de headers :
-``` java
+```less
 X-Frame-Options
 X-Content-Type-Options
 Referrer-Policy
@@ -113,7 +114,7 @@ sur les services backend.
 # Exemple avec Nginx
 
 Configuration simplifiée :
-``` Dockerfile
+```Dockerfile
 server {
 listen 443 ssl;
 

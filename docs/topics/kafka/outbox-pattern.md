@@ -14,7 +14,7 @@ Exemple :
 - publication d’un événement `SejourCreatedEvent`
 
 Un problème classique apparaît alors :
-```
+```less
 Write DB
 +
 Publish Event
@@ -68,26 +68,20 @@ Flux :
 # Architecture
 
 Flux simplifié :
-```
-Client
-|
-v
-Application Service
-|
-v
-Database Transaction
-|
-+--> Write Business Data
-|
-+--> Write Outbox Event
-|
-Commit
-|
-v
-Outbox Publisher
-|
-v
-Kafka
+```mermaid
+flowchart TD
+    CLIENT[Client] --> APP[Application Service]
+
+    APP --> TX[Database Transaction]
+
+    TX --> BD[Write Business Data]
+    TX --> OB[Write Outbox Event]
+
+    BD --> COMMIT[Commit Transaction]
+    OB --> COMMIT
+
+    COMMIT --> PUB[Outbox Publisher]
+    PUB --> KAFKA[(Kafka Event Bus)]
 ```
 
 ---
@@ -95,7 +89,7 @@ Kafka
 # Table Outbox
 
 Exemple de structure :
-```
+```less
 outbox_events
 
 id
