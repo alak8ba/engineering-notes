@@ -1,26 +1,55 @@
-site_name: Backend Engineering Handbook
+site_name: Backend Engineering Notes
+site_description: Backend architecture, event-driven systems and DevOps patterns
+site_author: Aliasoft
 
 theme:
-  name: material
+    name: material
+    features:
+        - navigation.tabs
+        - navigation.sections
+        - navigation.expand
+        - search.highlight
+        - content.code.copy
+
+markdown_extensions:
+    - admonition
+    - tables
+    - toc:
+          permalink: true
+    - pymdownx.superfences
+    - pymdownx.highlight
+    - pymdownx.details
+    - pymdownx.tabbed
+
+extra_javascript:
+    - https://unpkg.com/mermaid/dist/mermaid.min.js
 
 nav:
-  - Home: index.md
-  - Topics:
-      - Overview: topics/README.md
-      - Architecture:
+
+    - Home: index.md
+
+    - Architecture:
           - CQRS Pattern: topics/architecture/cqrs-pattern.md
-      - Kafka:
-          - Retry and DLT: topics/kafka/retry-and-dlt-pattern.md
+          - Hexagonal Architecture: topics/spring/hexagonal-architecture.md
+
+    - Event Driven Systems:
+          - Retry and DLT Pattern: topics/kafka/retry-and-dlt-pattern.md
           - Idempotent Consumers: topics/kafka/idempotent-consumers.md
           - Outbox Pattern: topics/kafka/outbox-pattern.md
           - Reliability Patterns: topics/kafka/reliability-patterns.md
-      - Security:
-          - JWT Authentication: topics/security/jwt-authentication-pattern.md
-      - DevOps:
-          - Docker Production: topics/devops/docker-production-pattern.md
-          - Pull-based Deployment: topics/devops/pull-based-deployment.md
-          - Reverse Proxy Pattern: topics/devops/reverse-proxy-pattern.md
+
+    - Security:
+          - JWT Authentication Pattern: topics/security/jwt-authentication-pattern.md
+
+    - DevOps:
+          - Docker Production Pattern: topics/devops/docker-production-pattern.md
           - Container Security: topics/devops/container-security.md
-          - CI/CD Pipeline: topics/devops/ci-cd-pipeline-pattern.md
-  - Projects:
-      - Seaway Overview: projects/seaway/project-overview.md
+          - Reverse Proxy Pattern: topics/devops/reverse-proxy-pattern.md
+          - Pull-based Deployment: topics/devops/pull-based-deployment.md
+          - CI/CD Pipeline Pattern: topics/devops/ci-cd-pipeline-pattern.md
+
+    - Projects:
+          - Seaway Overview: projects/seaway/project-overview.md
+          - Architecture Overview: projects/seaway/architecture-overview.md
+          - CI/CD Overview: projects/seaway/ci-cd-overview.md
+          - Security Overview: projects/seaway/security-overview.md

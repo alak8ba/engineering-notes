@@ -1,11 +1,14 @@
 # Backend Engineering Notes
 
-This documentation contains technical notes about backend engineering.
+This documentation gathers engineering notes about
+modern backend systems.
 
 Topics include:
 
-- Architecture patterns
-- Event-driven systems
-- Security
+- architecture patterns
+- event-driven systems
+- distributed messaging
+- security
 - DevOps
-- Case studies from real projects
+
+The notes are based on real-world project experience.
