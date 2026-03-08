@@ -1,0 +1,26 @@
+site_name: Backend Engineering Handbook
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Topics:
+      - Overview: topics/README.md
+      - Architecture:
+          - CQRS Pattern: topics/architecture/cqrs-pattern.md
+      - Kafka:
+          - Retry and DLT: topics/kafka/retry-and-dlt-pattern.md
+          - Idempotent Consumers: topics/kafka/idempotent-consumers.md
+          - Outbox Pattern: topics/kafka/outbox-pattern.md
+          - Reliability Patterns: topics/kafka/reliability-patterns.md
+      - Security:
+          - JWT Authentication: topics/security/jwt-authentication-pattern.md
+      - DevOps:
+          - Docker Production: topics/devops/docker-production-pattern.md
+          - Pull-based Deployment: topics/devops/pull-based-deployment.md
+          - Reverse Proxy Pattern: topics/devops/reverse-proxy-pattern.md
+          - Container Security: topics/devops/container-security.md
+          - CI/CD Pipeline: topics/devops/ci-cd-pipeline-pattern.md
+  - Projects:
+      - Seaway Overview: projects/seaway/project-overview.md
