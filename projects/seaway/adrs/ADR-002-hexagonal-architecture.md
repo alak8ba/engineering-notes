@@ -76,3 +76,61 @@ Cette couche dépend des frameworks et des technologies.
 ## Structure typique
 
 Le projet est organisé de la manière suivante :
+```
+domain/
+application/
+infrastructure/
+```
+Les dépendances sont dirigées vers l’intérieur :
+``` infrastructure → application → domain ```
+
+Le domaine ne dépend jamais des couches externes.
+
+---
+
+## Conséquences
+
+### Avantages
+
+- forte séparation des responsabilités
+- domaine indépendant des frameworks
+- meilleure testabilité
+- facilité de remplacement des technologies
+- meilleure lisibilité de l’architecture
+
+---
+
+### Inconvénients
+
+- structure de projet plus complexe
+- plus de classes et d’interfaces
+- nécessité de discipline architecturale
+
+---
+
+## Alternatives considérées
+
+### Architecture en couches classique
+
+Structure :
+``` controller → service → repository ```
+
+Cette approche est simple mais conduit souvent à un fort couplage
+entre la logique métier et les frameworks.
+
+Elle rend plus difficile l’évolution de l’architecture et les tests unitaires.
+
+---
+
+## Justification
+
+L’architecture hexagonale a été retenue afin de :
+
+- maintenir un domaine métier propre
+- limiter les dépendances techniques
+- faciliter les tests unitaires
+- préparer l’évolution vers des systèmes plus distribués
+
+Elle s’intègre également bien avec l’architecture orientée événements
+mise en place dans le projet.
+
