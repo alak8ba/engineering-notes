@@ -89,3 +89,37 @@ Backend->>Frontend: Données utilisateur
 Frontend->>Backend: POST /auth/refresh
 Backend->>Frontend: Nouveau Access Token
 ```
+
+Description :
+
+1. l'utilisateur se connecte
+2. le backend génère un access token et un refresh token
+3. les tokens sont stockés dans des cookies HttpOnly
+4. le frontend utilise /auth/me pour récupérer l'utilisateur
+5. si le token expire, un refresh est effectué automatiquement
+
+# 4 — Architecture CI/CD
+```mermaid
+flowchart LR
+
+Dev[Developer]
+GitHub[GitHub Repo]
+CI[GitHub Actions]
+Registry[GHCR Registry]
+Server[Production Server]
+Watchtower[Watchtower]
+
+Dev --> GitHub
+GitHub --> CI
+CI --> Registry
+Server --> Registry
+Watchtower --> Server
+```
+
+Description :
+1. le développeur pousse le code sur GitHub
+2. GitHub Actions exécute la CI
+3. les images Docker sont construites
+4. les images sont publiées dans GHCR
+5. le serveur récupère les nouvelles images
+6. Watchtower redéploie automatiquement les containers
