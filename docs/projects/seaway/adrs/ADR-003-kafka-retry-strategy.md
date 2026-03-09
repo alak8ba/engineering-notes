@@ -93,20 +93,20 @@ même en présence de retries ou de redéliveries.
 
 ## Conséquences
 
-### Avantages
+!!! tip "Avantages"
 
-- résilience du système
-- aucun blocage du consumer
-- isolation des messages invalides
-- meilleure observabilité des erreurs
+    - résilience du système
+    - aucun blocage du consumer
+    - isolation des messages invalides
+    - meilleure observabilité des erreurs
 
 ---
 
-### Inconvénients
+!!! tip "Inconvénients"
 
-- complexité supplémentaire
-- gestion nécessaire des messages en DLT
-- nécessité d'idempotence côté métier
+    - complexité supplémentaire
+    - gestion nécessaire des messages en DLT
+    - nécessité d'idempotence côté métier
 
 ---
 

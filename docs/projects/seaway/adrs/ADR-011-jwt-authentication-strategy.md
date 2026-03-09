@@ -177,20 +177,20 @@ Plusieurs mécanismes complètent la sécurité :
 
 ## Conséquences
 
-### Avantages
+!!! tip "Avantages"
 
-- API stateless
-- compatible SPA
-- bonne sécurité
-- gestion simple des sessions
+    - API stateless
+    - compatible SPA
+    - bonne sécurité
+    - gestion simple des sessions
 
 ---
 
-### Inconvénients
+!!! warning "Inconvénients"
 
-- gestion du refresh token
-- complexité légèrement supérieure
-- gestion de l'expiration des tokens
+    - gestion du refresh token
+    - complexité légèrement supérieure
+    - gestion de l'expiration des tokens
 
 ---
 

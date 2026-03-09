@@ -90,21 +90,21 @@ Le domaine ne dépend jamais des couches externes.
 
 ## Conséquences
 
-### Avantages
+!!! tip "Avantages"
 
-- forte séparation des responsabilités
-- domaine indépendant des frameworks
-- meilleure testabilité
-- facilité de remplacement des technologies
-- meilleure lisibilité de l’architecture
+    - forte séparation des responsabilités
+    - domaine indépendant des frameworks
+    - meilleure testabilité
+    - facilité de remplacement des technologies
+    - meilleure lisibilité de l’architecture
 
 ---
 
-### Inconvénients
+!!! tip "Inconvénients"
 
-- structure de projet plus complexe
-- plus de classes et d’interfaces
-- nécessité de discipline architecturale
+    - structure de projet plus complexe
+    - plus de classes et d’interfaces
+    - nécessité de discipline architecturale
 
 ---
 

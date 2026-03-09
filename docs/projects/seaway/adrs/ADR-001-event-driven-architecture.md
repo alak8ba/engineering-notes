@@ -35,20 +35,20 @@ et consommés par différents composants :
 
 ## Conséquences
 
-Avantages :
+!!! tip "Avantages"
 
-- découplage entre composants
-- meilleure évolutivité
-- traitement asynchrone
-- possibilité d'ajouter de nouveaux consommateurs
+    - découplage entre composants
+    - meilleure évolutivité
+    - traitement asynchrone
+    - possibilité d'ajouter de nouveaux consommateurs
 
-Inconvénients :
+!!! warning "Inconvénients"
 
-- complexité accrue
-- gestion des retries
-- gestion des doublons
+    - complexité accrue
+    - gestion des retries
+    - gestion des doublons
 
-Ces problématiques sont traitées via :
+!!! note "Ces problématiques sont traitées via"
 
 - idempotence
 - retry avec backoff

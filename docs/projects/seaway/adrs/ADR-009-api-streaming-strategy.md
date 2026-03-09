@@ -60,22 +60,21 @@ Le frontend rafraîchit les données à intervalle régulier.
 
 ---
 
-### Avantages
+!!! tip "Avantages"
 
-- simplicité d'implémentation
-- robustesse
-- aucune connexion longue durée
-- facile à maintenir
+    - simplicité d'implémentation
+    - robustesse
+    - aucune connexion longue durée
+    - facile à maintenir
 
 ---
 
-### Inconvénients
+!!! warning "Inconvénients"
 
-- latence entre les mises à jour
-- requêtes supplémentaires
+    - latence entre les mises à jour
+    - requêtes supplémentaires
 
-Dans le contexte du projet, ces inconvénients
-sont considérés comme acceptables.
+    Dans le contexte du projet, ces inconvénients sont considérés comme acceptables.
 
 ---
 
@@ -118,18 +117,18 @@ Elle aurait introduit :
 
 ## Conséquences
 
-### Avantages
+!!! tip "Avantages"
 
-- architecture simple
-- API REST classique facile à maintenir
-- complexité technique limitée
+    - architecture simple
+    - API REST classique facile à maintenir
+    - complexité technique limitée
 
 ---
 
-### Inconvénients
+!!! warning "Inconvénients"
 
-- absence de temps réel strict
-- latence dépendante de l'intervalle de polling
+    - absence de temps réel strict
+    - latence dépendante de l'intervalle de polling
 
 ---
 

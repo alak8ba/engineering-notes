@@ -1,5 +1,9 @@
 # Seaway — CI/CD Overview
 
+!!! note  
+	This documentation presents the architectural principles  and engineering practices used in the project.  
+	  
+	Operational details and internal infrastructure configurations are intentionally omitted.
 ## Objectif
 
 Mettre en place une chaîne CI/CD réaliste et production-ready

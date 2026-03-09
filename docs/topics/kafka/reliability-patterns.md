@@ -84,11 +84,11 @@ le service enregistre l’événement dans une table
 
 Un composant dédié publie ensuite l’événement vers Kafka.
 
-Avantages :
+!!! tip "Avantages"
 
-- élimine le problème du **dual write**
-- garantit que les événements ne sont pas perdus
-- permet de rejouer les événements
+    - élimine le problème du **dual write**
+    - garantit que les événements ne sont pas perdus
+    - permet de rejouer les événements
 
 ---
 
@@ -174,30 +174,28 @@ Flux complet :
 
 ---
 
-# Avantages
+!!! tip "Avantages"
 
-Cette combinaison apporte :
+    Cette combinaison apporte :
 
-- résilience
-- cohérence
-- observabilité
-- tolérance aux erreurs
+    - résilience
+    - cohérence
+    - observabilité
+    - tolérance aux erreurs
 
-Elle permet de construire
-des architectures event-driven robustes.
+    Elle permet de construire des architectures event-driven robustes.
 
 ---
 
-# Limites
+!!! warning "Limites"
 
-Ces patterns introduisent :
+    Ces patterns introduisent :
 
-- plus de composants
-- plus de complexité
-- plus d’observabilité nécessaire
+    - plus de composants
+    - plus de complexité
+    - plus d’observabilité nécessaire
 
-Cependant cette complexité est généralement
-nécessaire pour les systèmes distribués.
+    Cependant cette complexité est généralement nécessaire pour les systèmes distribués.
 
 ---
 

@@ -98,20 +98,20 @@ Flux typique :
 
 ## Conséquences
 
-### Avantages
+!!! tip "Avantages"
 
-- élimine le problème du dual write
-- améliore la fiabilité des événements
-- permet de rejouer les événements si nécessaire
-- facilite l'observabilité des flux événementiels
+   - élimine le problème du dual write
+     - améliore la fiabilité des événements
+     - permet de rejouer les événements si nécessaire
+     - facilite l'observabilité des flux événementiels
 
 ---
 
-### Inconvénients
+!!! warning "Inconvénients"
 
-- complexité supplémentaire
-- table outbox à maintenir
-- nécessité d'un composant de publication
+    - complexité supplémentaire
+    - table outbox à maintenir
+    - nécessité d'un composant de publication
 
 ---
 

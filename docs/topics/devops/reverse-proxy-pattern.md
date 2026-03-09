@@ -53,10 +53,10 @@ flowchart TD
     RP -->|HTTP| B[Backend Service]
 ```
 
-Avantages :
+!!! tip "Avantages"
 
-- simplifie la configuration des services backend
-- centralise la gestion des certificats
+    - simplifie la configuration des services backend
+    - centralise la gestion des certificats
 
 ---
 
@@ -136,34 +136,32 @@ Dans cet exemple :
 
 ---
 
-# Avantages
+!!! tip "Avantages"
 
-Le reverse proxy apporte plusieurs bénéfices :
+    Le reverse proxy apporte plusieurs bénéfices :
 
-- point d’entrée unique
-- gestion centralisée de HTTPS
-- amélioration de la sécurité
-- meilleure observabilité
-- simplification de l’architecture
+    - point d’entrée unique
+    - gestion centralisée de HTTPS
+    - amélioration de la sécurité
+    - meilleure observabilité
+    - simplification de l’architecture
 
 ---
 
-# Limites
+!!! warning "Limites"
 
-Le reverse proxy devient
-un composant critique du système.
+    Le reverse proxy devient un composant critique du système.
+    
+    Il doit être :
+    
+    - correctement configuré
+    - surveillé
+    - sécurisé
 
-Il doit être :
+    Dans les architectures très distribuées, un reverse proxy peut être complété par :
 
-- correctement configuré
-- surveillé
-- sécurisé
-
-Dans les architectures très distribuées,
-un reverse proxy peut être complété par :
-
-- un load balancer
-- un API gateway
+    - un load balancer
+    - un API gateway
 
 ---
 

@@ -108,27 +108,26 @@ Dans cet exemple :
 
 ---
 
-# Avantages du pattern
+!!! tip "Avantages du pattern"
 
-Ce pattern apporte plusieurs bénéfices :
+    Ce pattern apporte plusieurs bénéfices :
 
-- amélioration de la résilience
-- isolation des messages invalides
-- continuité du traitement des topics
-- meilleure observabilité des erreurs
+    - amélioration de la résilience
+    - isolation des messages invalides
+    - continuité du traitement des topics
+    - meilleure observabilité des erreurs
 
 ---
 
-# Limites
+!!! warning "Limites"
 
-Le pattern ne résout pas certains problèmes :
+    Le pattern ne résout pas certains problèmes :
 
-- erreurs métier persistantes
-- duplication possible des messages
-- nécessité de gérer l'idempotence
+    - erreurs métier persistantes
+    - duplication possible des messages
+    - nécessité de gérer l'idempotence
 
-C’est pourquoi il est généralement combiné
-avec un **consumer idempotent**.
+    C’est pourquoi il est généralement combiné avec un **consumer idempotent**.
 
 ---
 

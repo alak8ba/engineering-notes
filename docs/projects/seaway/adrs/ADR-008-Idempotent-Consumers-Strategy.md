@@ -128,20 +128,20 @@ l'application multiple d'un même événement.
 
 ## Conséquences
 
-### Avantages
+!!! tip "Avantages"
 
-- cohérence du système
-- tolérance aux redélivrances Kafka
-- compatibilité avec les retries
-- sécurité en cas de replay d'événements
+    - cohérence du système
+    - tolérance aux redélivrances Kafka
+    - compatibilité avec les retries
+    - sécurité en cas de replay d'événements
 
 ---
 
-### Inconvénients
+!!! warning "Inconvénients"
 
-- complexité supplémentaire
-- gestion d'identifiants d'événements
-- stockage éventuel des événements traités
+    - complexité supplémentaire
+    - gestion d'identifiants d'événements
+    - stockage éventuel des événements traités
 
 ---
 

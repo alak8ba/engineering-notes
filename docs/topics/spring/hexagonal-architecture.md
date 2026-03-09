@@ -202,18 +202,16 @@ les responsabilités de chaque couche.
 
 ---
 
-# Avantages
+!!! tip "Avantages"
 
-L'architecture hexagonale apporte
-plusieurs bénéfices :
+    L'architecture hexagonale apporte plusieurs bénéfices :
 
-- isolation du domaine métier
-- testabilité élevée
-- découplage des technologies
-- flexibilité d'évolution
+    - isolation du domaine métier
+    - testabilité élevée
+    - découplage des technologies
+    - flexibilité d'évolution
 
-Le domaine reste stable
-même si les technologies changent.
+    Le domaine reste stable même si les technologies changent.
 
 ---
 
@@ -236,20 +234,17 @@ testés séparément.
 
 ---
 
-# Limites
+!!! warning "Limites"
 
-Cette architecture introduit :
+    Cette architecture introduit :
 
-- plus de classes
-- plus d'abstractions
-- une structure plus complexe
+    - plus de classes
+    - plus d'abstractions
+    - une structure plus complexe
 
-Elle peut sembler excessive
-pour de très petits projets.
+    Elle peut sembler excessive pour de très petits projets.
 
-Cependant elle devient
-très utile dès que le système
-grandit.
+    Cependant elle devient très utile dès que le système grandit.
 
 ---
 

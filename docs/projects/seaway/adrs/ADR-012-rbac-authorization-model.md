@@ -120,20 +120,20 @@ Les utilisateurs standards peuvent :
 
 ## Conséquences
 
-### Avantages
+!!! tip "Avantages"
 
-- modèle simple et compréhensible
-- intégration native avec Spring Security
-- séparation claire entre authentification et autorisation
-- évolutif vers des modèles plus complexes
+    - modèle simple et compréhensible
+    - intégration native avec Spring Security
+    - séparation claire entre authentification et autorisation
+    - évolutif vers des modèles plus complexes
 
 ---
 
-### Inconvénients
+!!! warning "Inconvénients"
 
-- granularité limitée
-- gestion des permissions moins fine
-- nécessite une évolution si les besoins deviennent plus complexes
+    - granularité limitée
+    - gestion des permissions moins fine
+    - nécessite une évolution si les besoins deviennent plus complexes
 
 ---
 

@@ -192,12 +192,12 @@ Une approche plus sécurisée consiste
 à stocker les tokens dans des cookies
 **HttpOnly**.
 
-Avantages :
+!!! tip "Avantages"
 
-- inaccessible au JavaScript
-- réduit les risques XSS
+    - inaccessible au JavaScript
+    - réduit les risques XSS
 
-Les cookies peuvent être configurés avec :
+    Les cookies peuvent être configurés avec :
 ```
 HttpOnly
 Secure
@@ -245,27 +245,26 @@ ROLE_USER
 
 ---
 
-# Avantages
+!!! tip "Avantages"
 
-JWT permet :
+    JWT permet :
 
-- une API stateless
-- une bonne scalabilité
-- une compatibilité avec les SPA
-- une architecture simple
+    - une API stateless
+    - une bonne scalabilité
+    - une compatibilité avec les SPA
+    - une architecture simple
 
 ---
 
-# Limites
+!!! warning "Limites"
 
-JWT introduit certains défis :
+    JWT introduit certains défis :
 
-- gestion de la révocation
-- gestion des refresh tokens
-- sécurisation du stockage
+    - gestion de la révocation
+    - gestion des refresh tokens
+    - sécurisation du stockage
 
-Une mauvaise implémentation
-peut introduire des failles.
+    Une mauvaise implémentation peut introduire des failles.
 
 ---
 

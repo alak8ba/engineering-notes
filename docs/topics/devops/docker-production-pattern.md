@@ -57,11 +57,11 @@ COPY --from=build /app/target/app.jar app.jar
 
 ENTRYPOINT ["java","-jar","/app.jar"]
 ```
-Avantages :
+!!! tip "Avantages"
 
-- image plus petite
-- moins de dépendances
-- surface d’attaque réduite
+    - image plus petite
+    - moins de dépendances
+    - surface d’attaque réduite
 
 ---
 
@@ -75,10 +75,10 @@ RUN useradd -u 10001 appuser
 USER appuser
 ```
 
-Avantages :
+!!! tip "Avantages"
 
-- limite les privilèges
-- réduit les risques en cas de compromission
+    - limite les privilèges
+    - réduit les risques en cas de compromission
 
 ---
 
@@ -109,10 +109,10 @@ tmpfs:
 /tmp
 ```
 
-Avantages :
+!!! tip "Avantages"
 
-- améliore les performances
-- empêche la persistance de fichiers
+    - améliore les performances
+    - empêche la persistance de fichiers
 
 ---
 
@@ -182,23 +182,22 @@ de collecter les logs.
 
 ---
 
-# Avantages
+!!! tip "Avantages"
 
-Cette approche apporte :
+    Cette approche apporte :
 
-- sécurité renforcée
-- images plus petites
-- déploiements reproductibles
-- meilleure observabilité
+    - sécurité renforcée
+    - images plus petites
+    - déploiements reproductibles
+    - meilleure observabilité
 
 ---
 
-# Limites
+!!! warning "Limites"
 
-La configuration peut devenir plus complexe.
+    La configuration peut devenir plus complexe.
 
-Certaines applications doivent être adaptées
-pour fonctionner avec un filesystem en lecture seule.
+    Certaines applications doivent être adaptées pour fonctionner avec un filesystem en lecture seule.
 
 ---
 

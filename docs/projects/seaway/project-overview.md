@@ -1,5 +1,10 @@
 # Seaway — Project Overview
 
+!!! note  
+	This documentation presents the architectural principles  and engineering practices used in the project.  
+	  
+	Operational details and internal infrastructure configurations are intentionally omitted.
+
 Projet backend / frontend conçu dans le cadre d’une collaboration
 technique autour d’architectures modernes orientées événements.
 

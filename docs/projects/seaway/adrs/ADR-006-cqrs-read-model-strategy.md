@@ -82,20 +82,20 @@ Le flux est le suivant :
 
 ## Conséquences
 
-### Avantages
+!!! tip "Avantages"
 
-- API adaptée aux besoins de l’UI
-- meilleure performance de lecture
-- découplage entre modèle métier et affichage
-- évolution plus simple du domaine
+    - API adaptée aux besoins de l’UI
+    - meilleure performance de lecture
+    - découplage entre modèle métier et affichage
+    - évolution plus simple du domaine
 
 ---
 
-### Inconvénients
+!!! warning "Inconvénients"
 
-- duplication contrôlée de certaines données
-- cohérence éventuelle entre write et read model
-- complexité supplémentaire
+    - duplication contrôlée de certaines données
+    - cohérence éventuelle entre write et read model
+    - complexité supplémentaire
 
 ---
 

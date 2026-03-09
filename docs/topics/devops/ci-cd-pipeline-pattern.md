@@ -192,33 +192,30 @@ production
 
 ---
 
-# Avantages
+!!! tip "Avantages"
 
-Les pipelines CI/CD apportent :
+    Les pipelines CI/CD apportent :
 
-- automatisation
-- reproductibilité
-- qualité du code
-- déploiements rapides
+    - automatisation
+    - reproductibilité
+    - qualité du code
+    - déploiements rapides
 
-Elles réduisent les erreurs humaines
-et accélèrent la livraison.
+    Elles réduisent les erreurs humaines et accélèrent la livraison.
 
 ---
 
-# Limites
+!!! warning "Limites"
 
-Les pipelines introduisent
-une complexité d’infrastructure.
+    Les pipelines introduisent une complexité d’infrastructure.
 
-Elles nécessitent :
+    Elles nécessitent :
 
-- maintenance
-- surveillance
-- gestion des secrets
+    - maintenance
+    - surveillance
+    - gestion des secrets
 
-Cependant ces contraintes sont
-largement compensées par les bénéfices.
+    Cependant ces contraintes sont largement compensées par les bénéfices.
 
 ---
 

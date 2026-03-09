@@ -1,5 +1,9 @@
 # Seaway — Architecture Overview
 
+!!! note  
+	This documentation presents the architectural principles  and engineering practices used in the project.  
+	  
+	Operational details and internal infrastructure configurations are intentionally omitted.
 ## Contexte général
 
 Seaway est un projet backend / frontend développé from scratch.

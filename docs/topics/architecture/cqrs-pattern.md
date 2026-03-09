@@ -127,37 +127,31 @@ Cela permet :
 - une bonne scalabilité
 
 ---
-
-# Avantages
-
-CQRS apporte plusieurs bénéfices :
-
-- séparation claire des responsabilités
-- optimisation indépendante lecture / écriture
-- meilleure scalabilité
-- meilleure adaptabilité aux besoins UI
-
-Il est particulièrement adapté
-aux architectures event-driven.
-
----
-
-# Inconvénients
-
-CQRS introduit une complexité supplémentaire :
-
-- duplication de données
-- gestion de la cohérence
-- architecture plus riche
-
-Les systèmes CQRS sont généralement
-**eventually consistent**.
-
-Cela signifie que le read model
-peut être légèrement en retard
-par rapport au write model.
-
----
+!!! tip "Avantages"  
+  
+    CQRS apporte plusieurs bénéfices :  
+  
+    - séparation claire des responsabilités  
+    - optimisation indépendante lecture / écriture  
+    - meilleure scalabilité  
+    - meilleure adaptabilité aux besoins UI  
+  
+    Il est particulièrement adapté aux architectures event-driven.  
+  
+---  
+  
+!!! warning "Inconvénients"  
+  
+    CQRS introduit une complexité supplémentaire :  
+  
+    - duplication de données  
+    - gestion de la cohérence  
+    - architecture plus riche  
+  
+    Les systèmes CQRS sont généralement  
+    **eventually consistent**.  
+  
+    Cela signifie que le read model peut être légèrement en retard par rapport au write model.
 
 # Quand utiliser CQRS
 

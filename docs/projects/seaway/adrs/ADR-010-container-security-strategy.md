@@ -146,20 +146,20 @@ Tous les autres ports sont bloqués.
 
 ## Conséquences
 
-### Avantages
+!!! tip "Avantages"
 
-- réduction des privilèges des conteneurs
-- limitation des surfaces d’attaque
-- isolation des services internes
-- compatibilité avec les bonnes pratiques Docker
+    - réduction des privilèges des conteneurs
+    - limitation des surfaces d’attaque
+    - isolation des services internes
+    - compatibilité avec les bonnes pratiques Docker
 
 ---
 
-### Inconvénients
+!!! warning "Inconvénients"
 
-- configuration plus complexe
-- certains outils nécessitent des ajustements
-- nécessité de tester les permissions applicatives
+    - configuration plus complexe
+    - certains outils nécessitent des ajustements
+    - nécessité de tester les permissions applicatives
 
 ---
 

@@ -76,20 +76,20 @@ de cette classe.
 
 ## Conséquences
 
-### Avantages
+!!! tip "Avantages"
 
-- environnement proche de la production
-- suppression des incompatibilités H2 / PostgreSQL
-- meilleure fiabilité des tests
-- isolation complète des tests
+    - environnement proche de la production
+    - suppression des incompatibilités H2 / PostgreSQL
+    - meilleure fiabilité des tests
+    - isolation complète des tests
 
 ---
 
-### Inconvénients
+!!! warning "Inconvénients"
 
-- dépendance à Docker
-- démarrage plus lent que des tests unitaires
-- complexité légèrement supérieure
+    - dépendance à Docker
+    - démarrage plus lent que des tests unitaires
+    - complexité légèrement supérieure
 
 ---
 

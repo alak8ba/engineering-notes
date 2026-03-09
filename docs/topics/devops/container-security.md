@@ -44,10 +44,10 @@ Exemple dans un Dockerfile :
 RUN useradd -u 10001 appuser
 USER appuser
 ```
-Avantages :
+!!! tip "Avantages"
 
-- réduit les privilèges
-- limite l’impact d’une compromission
+    - réduit les privilèges
+    - limite l’impact d’une compromission
 
 ---
 
@@ -76,10 +76,10 @@ tmpfs:
 /tmp
 ```
 
-Avantages :
+!!! tip "Avantages"
 
-- empêche la persistance de fichiers
-- améliore les performances
+    - empêche la persistance de fichiers
+    - améliore les performances
 
 ---
 
@@ -176,28 +176,27 @@ des comportements anormaux.
 
 ---
 
-# Avantages
+!!! tip "Avantages"
 
-Ces pratiques permettent :
+    Ces pratiques permettent :
 
-- une meilleure isolation
-- une réduction des risques
-- une architecture plus sécurisée
+    - une meilleure isolation
+    - une réduction des risques
+    - une architecture plus sécurisée
 
 ---
 
-# Limites
-
-La sécurité des conteneurs doit être
-complétée par d’autres mécanismes :
-
-- firewall
-- reverse proxy
-- authentification
-- monitoring
-
-La sécurité doit être
-multi-couches.
+!!! warning "Limites"
+    
+    La sécurité des conteneurs doit être complétée par d’autres mécanismes :
+    
+    - firewall
+    - reverse proxy
+    - authentification
+    - monitoring
+    
+    La sécurité doit être
+    multi-couches.
 
 ---
 

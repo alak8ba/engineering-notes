@@ -118,27 +118,26 @@ Flux :
 
 ---
 
-# Avantages
+!!! tip "Avantages"
 
-Le Outbox Pattern apporte plusieurs bénéfices :
+    Le Outbox Pattern apporte plusieurs bénéfices :
 
-- élimine le problème du dual write
-- garantit que les événements ne sont pas perdus
-- permet de rejouer les événements
-- améliore la fiabilité du système
+    - élimine le problème du dual write
+    - garantit que les événements ne sont pas perdus
+    - permet de rejouer les événements
+    - améliore la fiabilité du système
 
 ---
 
-# Inconvénients
+!!! warning "Inconvénients"
 
-Le pattern introduit :
+    Le pattern introduit :
 
-- une table supplémentaire
-- un composant de publication
-- une complexité légèrement supérieure
+    - une table supplémentaire
+    - un composant de publication
+    - une complexité légèrement supérieure
 
-Cependant cette complexité est généralement
-acceptable dans les architectures distribuées.
+    Cependant cette complexité est généralement acceptable dans les architectures distribuées.
 
 ---
 

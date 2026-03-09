@@ -134,21 +134,21 @@ Les credentials sont stockés dans :
 
 ## Conséquences
 
-### Avantages
+!!! tip "Avantages"
 
-- aucune connexion entrante requise
-- compatible avec une infrastructure HTTPS-only
-- surface d’attaque réduite
-- déploiement automatique simple
-- rollback possible via version d’image
+    - aucune connexion entrante requise
+    - compatible avec une infrastructure HTTPS-only
+    - surface d’attaque réduite
+    - déploiement automatique simple
+    - rollback possible via version d’image
 
 ---
 
-### Inconvénients
+!!! warning "Inconvénients"
 
-- moins de contrôle direct du moment du déploiement
-- dépendance à Watchtower
-- nécessité de gérer correctement les tags d’images
+    - moins de contrôle direct du moment du déploiement
+    - dépendance à Watchtower
+    - nécessité de gérer correctement les tags d’images
 
 ---
 

@@ -126,30 +126,27 @@ com.centurylinklabs.watchtower.enable=true
 
 ---
 
-# Avantages
+!!! tip "Avantages"
 
-Le pull-based deployment apporte
-plusieurs bénéfices :
+    Le pull-based deployment apporte plusieurs bénéfices :
 
-- aucune connexion entrante nécessaire
-- meilleure sécurité
-- architecture plus simple
-- compatibilité avec les environnements NAT
-- déploiement automatisé
+    - aucune connexion entrante nécessaire
+    - meilleure sécurité
+    - architecture plus simple
+    - compatibilité avec les environnements NAT
+    - déploiement automatisé
 
 ---
 
-# Limites
+!!! warning "Limites"
 
-Cette approche introduit quelques contraintes :
+    Cette approche introduit quelques contraintes :
+    
+    - moins de contrôle précis sur le moment exact du déploiement
+    - gestion des versions d’images nécessaire
+    - surveillance du registry
 
-- moins de contrôle précis sur le moment
-  exact du déploiement
-- gestion des versions d’images nécessaire
-- surveillance du registry
-
-Cependant ces limitations sont
-généralement acceptables.
+    Cependant ces limitations sont généralement acceptables.
 
 ---
 
