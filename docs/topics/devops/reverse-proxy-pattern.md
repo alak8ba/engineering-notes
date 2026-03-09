@@ -49,7 +49,7 @@ Le reverse proxy gère le chiffrement HTTPS.
 Flux :
 ```mermaid
 flowchart TD
-    C[Client] -->|HTTPS| RP[Reverse Proxy<br/>(TLS termination)]
+    C[Client] -->|HTTPS| RP["Reverse Proxy (TLS termination)"]
     RP -->|HTTP| B[Backend Service]
 ```
 
