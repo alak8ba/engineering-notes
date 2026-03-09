@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /inbox/
+Disallow: /journal/
+Disallow: /lessons-learned/
