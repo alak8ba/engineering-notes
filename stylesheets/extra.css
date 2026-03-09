@@ -195,3 +195,30 @@ code, pre {
 .md-header__button.md-icon {
     padding: 8px;
 }
+
+/* ------------------------------------------------ */
+/*                    MERMAID                       */
+/* ------------------------------------------------ */
+/* Fix Mermaid diagrams width */
+.mermaid {
+    max-width: 100%;
+    overflow-x: auto;
+    text-align: center;
+}
+/* éviter que les diagrammes cassent le layout */
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ------------------------------------------------ */
+/*                    PRINT                         */
+/* ------------------------------------------------ */
+@media print {
+
+    .mermaid {
+        max-width: 90%;
+        margin: auto;
+    }
+
+}

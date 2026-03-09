@@ -7,28 +7,31 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Backend architecture, event-driven systems and DevOps patterns" name="description"/>
 <meta content="Aliasoft" name="author"/>
-<link href="../../../None" rel="icon"/>
+<link href="../../None" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.4" name="generator"/>
-<title>Api design - Backend Engineering Notes</title>
-<link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<title>Pattern Name - Backend Engineering Notes</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="light-blue" data-md-color-primary="blue-grey" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#pattern-name">
+          Skip to content
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Backend Engineering Notes" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Backend Engineering Notes">
+<a aria-label="Backend Engineering Notes" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Backend Engineering Notes">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
@@ -44,7 +47,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Api design
+              Pattern Name
             
           </span>
 </div>
@@ -99,7 +102,7 @@
 <div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../..">
+<a class="md-tabs__link" href="../..">
         
   
   
@@ -110,7 +113,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../topics/architecture/cqrs-pattern/">
+<a class="md-tabs__link" href="../../topics/architecture/cqrs-pattern/">
           
   
   
@@ -119,7 +122,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../topics/kafka/retry-and-dlt-pattern/">
+<a class="md-tabs__link" href="../../topics/kafka/retry-and-dlt-pattern/">
           
   
   
@@ -128,7 +131,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../topics/security/jwt-authentication-pattern/">
+<a class="md-tabs__link" href="../../topics/security/jwt-authentication-pattern/">
           
   
   
@@ -137,7 +140,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../topics/devops/docker-production-pattern/">
+<a class="md-tabs__link" href="../../topics/devops/docker-production-pattern/">
           
   
   
@@ -146,7 +149,7 @@
         </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="../project-overview/">
+<a class="md-tabs__link" href="../../projects/seaway/project-overview/">
           
   
   
@@ -164,14 +167,14 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Backend Engineering Notes" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Backend Engineering Notes">
+<a aria-label="Backend Engineering Notes" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Backend Engineering Notes">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
 </a>
     Backend Engineering Notes
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
+<a class="md-nav__link" href="../..">
 <span class="md-ellipsis">
     
   
@@ -206,7 +209,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../topics/architecture/cqrs-pattern/">
+<a class="md-nav__link" href="../../topics/architecture/cqrs-pattern/">
 <span class="md-ellipsis">
     
   
@@ -218,7 +221,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../topics/spring/hexagonal-architecture/">
+<a class="md-nav__link" href="../../topics/spring/hexagonal-architecture/">
 <span class="md-ellipsis">
     
   
@@ -256,7 +259,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../topics/kafka/retry-and-dlt-pattern/">
+<a class="md-nav__link" href="../../topics/kafka/retry-and-dlt-pattern/">
 <span class="md-ellipsis">
     
   
@@ -268,7 +271,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../topics/kafka/idempotent-consumers/">
+<a class="md-nav__link" href="../../topics/kafka/idempotent-consumers/">
 <span class="md-ellipsis">
     
   
@@ -280,7 +283,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../topics/kafka/outbox-pattern/">
+<a class="md-nav__link" href="../../topics/kafka/outbox-pattern/">
 <span class="md-ellipsis">
     
   
@@ -292,7 +295,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../topics/kafka/reliability-patterns/">
+<a class="md-nav__link" href="../../topics/kafka/reliability-patterns/">
 <span class="md-ellipsis">
     
   
@@ -330,7 +333,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../topics/security/jwt-authentication-pattern/">
+<a class="md-nav__link" href="../../topics/security/jwt-authentication-pattern/">
 <span class="md-ellipsis">
     
   
@@ -368,7 +371,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../topics/devops/docker-production-pattern/">
+<a class="md-nav__link" href="../../topics/devops/docker-production-pattern/">
 <span class="md-ellipsis">
     
   
@@ -380,7 +383,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../topics/devops/container-security/">
+<a class="md-nav__link" href="../../topics/devops/container-security/">
 <span class="md-ellipsis">
     
   
@@ -392,7 +395,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../topics/devops/reverse-proxy-pattern/">
+<a class="md-nav__link" href="../../topics/devops/reverse-proxy-pattern/">
 <span class="md-ellipsis">
     
   
@@ -404,7 +407,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../topics/devops/pull-based-deployment/">
+<a class="md-nav__link" href="../../topics/devops/pull-based-deployment/">
 <span class="md-ellipsis">
     
   
@@ -416,7 +419,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../topics/devops/ci-cd-pipeline-pattern/">
+<a class="md-nav__link" href="../../topics/devops/ci-cd-pipeline-pattern/">
 <span class="md-ellipsis">
     
   
@@ -454,7 +457,7 @@
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../project-overview/">
+<a class="md-nav__link" href="../../projects/seaway/project-overview/">
 <span class="md-ellipsis">
     
   
@@ -466,7 +469,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../architecture-overview/">
+<a class="md-nav__link" href="../../projects/seaway/architecture-overview/">
 <span class="md-ellipsis">
     
   
@@ -478,7 +481,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../ci-cd-overview/">
+<a class="md-nav__link" href="../../projects/seaway/ci-cd-overview/">
 <span class="md-ellipsis">
     
   
@@ -490,7 +493,7 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../security-overview/">
+<a class="md-nav__link" href="../../projects/seaway/security-overview/">
 <span class="md-ellipsis">
     
   
@@ -513,18 +516,167 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#context">
+<span class="md-ellipsis">
+      
+        Context
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#problem">
+<span class="md-ellipsis">
+      
+        Problem
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#solution">
+<span class="md-ellipsis">
+      
+        Solution
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#architecture">
+<span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example">
+<span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#advantages">
+<span class="md-ellipsis">
+      
+        Advantages
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#drawbacks">
+<span class="md-ellipsis">
+      
+        Drawbacks
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#when-to-use">
+<span class="md-ellipsis">
+      
+        When to Use
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references">
+<span class="md-ellipsis">
+      
+        References
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Api design</h1>
-<pre class="mermaid"><code>C4Context  
-title System Context  
-Person(user, "User")  
-System(api, "Backend API")  
-Rel(user, api, "Uses")  </code></pre>
+<h1 id="pattern-name">Pattern Name<a class="headerlink" href="#pattern-name" title="Permanent link">¶</a></h1>
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">¶</a></h2>
+<p>This problem appears in modern distributed systems when:</p>
+<ul>
+<li>...</li>
+<li>...</li>
+<li>...</li>
+</ul>
+<hr/>
+<h2 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">¶</a></h2>
+<p>Without this pattern:</p>
+<ul>
+<li>risk of inconsistencies</li>
+<li>difficult service coordination</li>
+<li>unreliable event propagation</li>
+</ul>
+<hr/>
+<h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link">¶</a></h2>
+<p>The pattern consists of:</p>
+<ol>
+<li>...</li>
+<li>...</li>
+<li>...</li>
+</ol>
+<blockquote>
+<p>Core idea: ensure reliability and clear separation of
+responsibilities.</p>
+</blockquote>
+<hr/>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>flowchart LR
+A[Component A] --&gt; B[Component B]
+B --&gt; C[Component C]</code></pre>
+<hr/>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">¶</a></h2>
+<p>Example scenario:</p>
+<ul>
+<li>Service A writes to database</li>
+<li>Event stored in outbox table</li>
+<li>Event published to Kafka</li>
+</ul>
+<hr/>
+<h2 id="advantages">Advantages<a class="headerlink" href="#advantages" title="Permanent link">¶</a></h2>
+<ul>
+<li>improved reliability</li>
+<li>better decoupling</li>
+<li>easier scalability</li>
+</ul>
+<hr/>
+<h2 id="drawbacks">Drawbacks<a class="headerlink" href="#drawbacks" title="Permanent link">¶</a></h2>
+<ul>
+<li>additional complexity</li>
+<li>operational overhead</li>
+</ul>
+<hr/>
+<h2 id="when-to-use">When to Use<a class="headerlink" href="#when-to-use" title="Permanent link">¶</a></h2>
+<p>Use this pattern when:</p>
+<ul>
+<li>building distributed systems</li>
+<li>integrating multiple services</li>
+<li>ensuring data consistency across boundaries</li>
+</ul>
+<hr/>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">¶</a></h2>
+<ul>
+<li>Designing Data-Intensive Applications</li>
+<li>Official documentation</li>
+</ul>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -546,7 +698,7 @@ Rel(user, api, "Uses")  </code></pre>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "toc.follow", "content.code.copy", "search.highlight", "search.suggest"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
 </body>
 </html>
