@@ -46,21 +46,23 @@ theme:
       - content.code.copy
       - search.highlight
       - search.suggest
-
+    custom_dir: overrides
     palette:
       #  Colors:  blue  indigo  teal  cyan  deep purple
       - scheme: default
-        primary: cyan
-        accent: cyan
+#        primary: teal
+        primary: blue grey
+        accent: light blue
         toggle:
-          icon: material/weather-night
-          name: Dark mode
+          icon: material/toggle-switch
+          name: Toggle theme
       - scheme: slate
-        primary: cyan
-        accent: cyan
+#        primary: teal
+        primary: blue grey
+        accent: light blue
         toggle:
-          icon: material/weather-sunny
-          name: Light mode
+          icon: material/toggle-switch-off-outline
+          name: Toggle theme
 
 
 nav:
