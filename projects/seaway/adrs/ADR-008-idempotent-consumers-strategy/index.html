@@ -13,6 +13,10 @@
       
       
       
+        <link rel="prev" href="../ADR-007-domain-events-and-outbox-pattern/">
+      
+      
+        <link rel="next" href="../ADR-009-api-streaming-strategy/">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>ADR-008 — Idempotent Consumers Strategy - Backend Engineering Notes</title>
+        <title>ADR-008 Idempotent Consumers - Backend Engineering Notes</title>
       
     
     
@@ -110,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ADR-008 — Idempotent Consumers Strategy
+              ADR-008 Idempotent Consumers
             
           </span>
         </div>
@@ -308,10 +312,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../project-overview/" class="md-tabs__link">
           
   
@@ -968,28 +974,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -1007,7 +1016,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1162,28 +1171,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_6" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="">
             
   
   
@@ -1201,7 +1213,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1440,10 +1452,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../ADR-008-idempotent-consumers-strategy.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-008 Idempotent Consumers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1459,6 +1498,181 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statut
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contexte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contexte
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Décision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principe-didempotence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principe d'idempotence
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-possible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implémentation possible
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implémentation possible">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-des-evenements-traites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table des événements traités
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idempotence-par-etat-metier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idempotence par état métier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-avec-retry-et-dlt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction avec Retry et DLT
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consequences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conséquences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alternatives-considerees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Alternatives considérées
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alternatives considérées">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exactly-once-semantics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exactly-once semantics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignorer-le-probleme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ignorer le problème
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#justification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Justification
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
