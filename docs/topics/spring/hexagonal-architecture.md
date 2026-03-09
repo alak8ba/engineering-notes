@@ -1,9 +1,22 @@
 # Hexagonal Architecture (Ports and Adapters)
 
 
+## Hexagonal Architecture Diagram
 
+```mermaid
+flowchart LR
 
+UI[REST Controller]
+UC[Use Cases]
+DOM[Domain Model]
+REP[Repository Port]
+DB[(Database)]
 
+UI --> UC
+UC --> DOM
+UC --> REP
+REP --> DB
+```
 
 ## Contexte
 
@@ -26,21 +39,6 @@ Cette situation rend l'application difficile à :
 L'architecture hexagonale, également appelée
 **Ports and Adapters**, vise à résoudre ce problème.
 
-## Hexagonal Architecture Diagram
-```mermaid
-flowchart LR
-
-UI[REST Controller]
-UC[Use Cases]
-DOM[Domain Model]
-REP[Repository Port]
-DB[(Database)]
-
-UI --> UC
-UC --> DOM
-UC --> REP
-REP --> DB
-```
 ---
 
 # Principe
