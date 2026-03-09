@@ -601,7 +601,7 @@ et les redirige vers les services internes.</p>
 <p>Le reverse proxy gère le chiffrement HTTPS.</p>
 <p>Flux :
 <pre class="mermaid"><code>flowchart TD
-    C[Client] --&gt;|HTTPS| RP[Reverse Proxy&lt;br/&gt;(TLS termination)]
+    C[Client] --&gt;|HTTPS| RP["Reverse Proxy (TLS termination)"]
     RP --&gt;|HTTP| B[Backend Service]</code></pre></p>
 <p>Avantages :</p>
 <ul>
