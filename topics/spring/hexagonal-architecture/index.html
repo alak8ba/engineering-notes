@@ -252,15 +252,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#contexte">
-<span class="md-ellipsis">
-      
-        Contexte
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#hexagonal-architecture-diagram">
 <span class="md-ellipsis">
       
@@ -270,10 +261,10 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#flowchart-lr-uirest-controller-ucuse-cases-domdomain-model-reprepository-port-dbdatabase-ui-uc-uc-dom-uc-rep-rep-db">
+<a class="md-nav__link" href="#contexte">
 <span class="md-ellipsis">
       
-        flowchart LR UI[REST Controller] UC[Use Cases] DOM[Domain Model] REP[Repository Port] DB[(Database)] UI --&gt; UC UC --&gt; DOM UC --&gt; REP REP --&gt; DB
+        Contexte
       
     </span>
 </a>
@@ -765,15 +756,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#contexte">
-<span class="md-ellipsis">
-      
-        Contexte
-      
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#hexagonal-architecture-diagram">
 <span class="md-ellipsis">
       
@@ -783,10 +765,10 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#flowchart-lr-uirest-controller-ucuse-cases-domdomain-model-reprepository-port-dbdatabase-ui-uc-uc-dom-uc-rep-rep-db">
+<a class="md-nav__link" href="#contexte">
 <span class="md-ellipsis">
       
-        flowchart LR UI[REST Controller] UC[Use Cases] DOM[Domain Model] REP[Repository Port] DB[(Database)] UI --&gt; UC UC --&gt; DOM UC --&gt; REP REP --&gt; DB
+        Contexte
       
     </span>
 </a>
@@ -799,6 +781,19 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="hexagonal-architecture-ports-and-adapters">Hexagonal Architecture (Ports and Adapters)<a class="headerlink" href="#hexagonal-architecture-ports-and-adapters" title="Permanent link">¶</a></h1>
+<h2 id="hexagonal-architecture-diagram">Hexagonal Architecture Diagram<a class="headerlink" href="#hexagonal-architecture-diagram" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>flowchart LR
+
+UI[REST Controller]
+UC[Use Cases]
+DOM[Domain Model]
+REP[Repository Port]
+DB[(Database)]
+
+UI --&gt; UC
+UC --&gt; DOM
+UC --&gt; REP
+REP --&gt; DB</code></pre>
 <h2 id="contexte">Contexte<a class="headerlink" href="#contexte" title="Permanent link">¶</a></h2>
 <p>Dans de nombreuses applications backend traditionnelles,
 le code métier est souvent fortement couplé aux
@@ -818,19 +813,7 @@ frameworks et aux technologies utilisées :</p>
 </ul>
 <p>L'architecture hexagonale, également appelée
 <strong>Ports and Adapters</strong>, vise à résoudre ce problème.</p>
-<h2 id="hexagonal-architecture-diagram">Hexagonal Architecture Diagram<a class="headerlink" href="#hexagonal-architecture-diagram" title="Permanent link">¶</a></h2>
-<h2 id="flowchart-lr-uirest-controller-ucuse-cases-domdomain-model-reprepository-port-dbdatabase-ui-uc-uc-dom-uc-rep-rep-db"><pre class="mermaid"><code>flowchart LR
-
-UI[REST Controller]
-UC[Use Cases]
-DOM[Domain Model]
-REP[Repository Port]
-DB[(Database)]
-
-UI --&gt; UC
-UC --&gt; DOM
-UC --&gt; REP
-REP --&gt; DB</code></pre><a class="headerlink" href="#flowchart-lr-uirest-controller-ucuse-cases-domdomain-model-reprepository-port-dbdatabase-ui-uc-uc-dom-uc-rep-rep-db" title="Permanent link">¶</a></h2>
+<hr/>
 <h1 id="principe">Principe<a class="headerlink" href="#principe" title="Permanent link">¶</a></h1>
 <p>L'idée principale est de <strong>placer le domaine métier
 au centre du système</strong>.</p>
