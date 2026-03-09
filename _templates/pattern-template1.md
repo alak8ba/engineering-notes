@@ -34,17 +34,17 @@ System(api, "Backend API")
 Rel(user, api, "Uses")
 ```
 
-!!! note
+!!! note ""
 
-Important engineering note.
+    Important engineering note.
 
 !!! warning
 
-Be careful with this pattern.
+    Be careful with this pattern.
 
 !!! tip
 
-Useful engineering trick.
+    Useful engineering trick.
 
 # Pattern Name
 

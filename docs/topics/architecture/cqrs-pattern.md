@@ -30,7 +30,7 @@ propose de séparer ces responsabilités.
 # Principe
 
 CQRS consiste à séparer :
-```java
+```
 Commands (écriture)
 Queries (lecture)
 ```

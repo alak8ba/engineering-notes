@@ -88,6 +88,22 @@ nav:
           - Architecture Overview: projects/seaway/architecture-overview.md
           - CI/CD Overview: projects/seaway/ci-cd-overview.md
           - Security Overview: projects/seaway/security-overview.md
+          - Adr: projects/seaway/security-overview.md
+
+          - Architecture Decisions:
+              - Overview: projects/seaway/adrs/index.md
+              - ADR-001 Event Driven Architecture: projects/seaway/adrs/ADR-001-event-driven-architecture.md
+              - ADR-002 Hexagonal Architecture: projects/seaway/adrs/ADR-002-hexagonal-architecture.md
+              - ADR-003 Kafka Retry Strategy: projects/seaway/adrs/ADR-003-kafka-retry-strategy.md
+              - ADR-004 Testcontainers Strategy: projects/seaway/adrs/ADR-004-testcontainers-for-integration-tests.md
+              - ADR-005 Pull-based Deployment: projects/seaway/adrs/ADR-005-pull-based-deployment-with-watchtower.md
+              - ADR-006 CQRS Read Model Strategy: projects/seaway/adrs/ADR-006-cqrs-read-model-strategy.md
+              - ADR-007 Domain Events and Outbox: projects/seaway/adrs/ADR-007-domain-events-and-outbox-pattern.md
+              - ADR-008 Idempotent Consumers: projects/seaway/adrs/ADR-008-idempotent-consumers-strategy.md
+              - ADR-009 API Streaming Strategy: projects/seaway/adrs/ADR-009-api-streaming-strategy.md
+              - ADR-010 Container Security Strategy: projects/seaway/adrs/ADR-010-container-security-strategy.md
+              - ADR-011 JWT Authentication Strategy: projects/seaway/adrs/ADR-011-jwt-authentication-strategy.md
+              - ADR-012 RBAC Authorization Model: projects/seaway/adrs/ADR-012-rbac-authorization-model.md
 
 copyright: >
   © 2026 Aliasoft • Backend Engineering Notes

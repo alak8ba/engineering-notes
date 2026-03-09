@@ -100,10 +100,10 @@ Flux typique :
 
 !!! tip "Avantages"
 
-   - élimine le problème du dual write
-     - améliore la fiabilité des événements
-     - permet de rejouer les événements si nécessaire
-     - facilite l'observabilité des flux événementiels
+    - élimine le problème du dual write
+    - améliore la fiabilité des événements
+    - permet de rejouer les événements si nécessaire
+    - facilite l'observabilité des flux événementiels
 
 ---
 

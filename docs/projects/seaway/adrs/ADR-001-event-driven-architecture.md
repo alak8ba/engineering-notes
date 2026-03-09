@@ -50,6 +50,6 @@ et consommés par différents composants :
 
 !!! note "Ces problématiques sont traitées via"
 
-- idempotence
-- retry avec backoff
-- Dead Letter Topics
+    - idempotence
+    - retry avec backoff
+    - Dead Letter Topics

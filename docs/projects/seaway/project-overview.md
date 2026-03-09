@@ -1,7 +1,8 @@
 # Seaway — Project Overview
 
-!!! note  
-	This documentation presents the architectural principles  and engineering practices used in the project.  
+!!! note  ""
+	
+    This documentation presents the architectural principles  and engineering practices used in the project.  
 	  
 	Operational details and internal infrastructure configurations are intentionally omitted.
 
