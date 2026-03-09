@@ -13,6 +13,10 @@
       
       
       
+        <link rel="prev" href="../security-overview/">
+      
+      
+        <link rel="next" href="ADR-001-event-driven-architecture/">
       
       
         
@@ -23,7 +27,7 @@
     
     
       
-        <title>Architecture Decision Records (ADR) - Backend Engineering Notes</title>
+        <title>Overview - Backend Engineering Notes</title>
       
     
     
@@ -76,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture-decision-records-adr" class="md-skip">
+        <a href="#architecture-decision-records" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Architecture Decision Records (ADR)
+              Overview
             
           </span>
         </div>
@@ -308,10 +312,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../project-overview/" class="md-tabs__link">
           
   
@@ -968,28 +974,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -1007,7 +1016,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1130,6 +1139,565 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Decisions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture Decisions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pourquoi-documenter-les-decisions-darchitecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pourquoi documenter les décisions d’architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perimetre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Périmètre
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principales-decisions-documentees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principales décisions documentées
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-dun-adr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure d’un ADR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relation-avec-larchitecture-du-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relation avec l’architecture du projet
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ADR-001-event-driven-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-001 Event Driven Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ADR-002-hexagonal-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-002 Hexagonal Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ADR-003-kafka-retry-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-003 Kafka Retry Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ADR-004-testcontainers-for-integration-tests/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-004 Testcontainers Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ADR-005-pull-based-deployment-with-watchtower/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-005 Pull-based Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ADR-006-cqrs-read-model-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-006 CQRS Read Model Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ADR-007-domain-events-and-outbox-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-007 Domain Events and Outbox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ADR-008-idempotent-consumers-strategy.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-008 Idempotent Consumers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ADR-009-api-streaming-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-009 API Streaming Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ADR-010-container-security-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-010 Container Security Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ADR-011-jwt-authentication-strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-011 JWT Authentication Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ADR-012-rbac-authorization-model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADR-012 RBAC Authorization Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1157,6 +1725,69 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pourquoi-documenter-les-decisions-darchitecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pourquoi documenter les décisions d’architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perimetre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Périmètre
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principales-decisions-documentees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principales décisions documentées
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structure-dun-adr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure d’un ADR
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relation-avec-larchitecture-du-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relation avec l’architecture du projet
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1172,81 +1803,92 @@
 
 
 
-<h1 id="architecture-decision-records-adr">Architecture Decision Records (ADR)<a class="headerlink" href="#architecture-decision-records-adr" title="Permanent link">&para;</a></h1>
-<p>Ce dossier contient les décisions d’architecture importantes
-prises dans le projet Seaway.</p>
-<p>Les ADR documentent :</p>
+<h1 id="architecture-decision-records">Architecture Decision Records<a class="headerlink" href="#architecture-decision-records" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p>This section documents the key architectural decisions
+taken during the development of the Seaway system.</p>
+<p>Operational infrastructure details are intentionally omitted.</p>
+</div>
+<p>Les <em>Architecture Decision Records (ADR)</em> constituent une méthode
+de documentation légère permettant de conserver une trace des
+choix techniques structurants réalisés au cours du projet.</p>
+<p>Chaque ADR décrit :</p>
 <ul>
-<li>le contexte</li>
-<li>la décision prise</li>
-<li>les conséquences</li>
-<li>les alternatives envisagées</li>
+<li>le <strong>contexte</strong> dans lequel une décision a été prise</li>
+<li>la <strong>décision d’architecture</strong> retenue</li>
+<li>les <strong>alternatives envisagées</strong></li>
+<li>les <strong>conséquences</strong> de ce choix</li>
 </ul>
-<p>Ils permettent de garder une trace des choix techniques
-et d'expliquer les raisons derrière ces choix.</p>
+<p>Cette approche permet de préserver le raisonnement
+architectural du système dans le temps.</p>
 <hr />
-<h1 id="liste-des-decisions">Liste des décisions<a class="headerlink" href="#liste-des-decisions" title="Permanent link">&para;</a></h1>
+<h2 id="pourquoi-documenter-les-decisions-darchitecture">Pourquoi documenter les décisions d’architecture<a class="headerlink" href="#pourquoi-documenter-les-decisions-darchitecture" title="Permanent link">&para;</a></h2>
+<p>Les systèmes logiciels évoluent continuellement et
+les décisions d’architecture sont souvent influencées par
+plusieurs contraintes :</p>
 <ul>
-<li>
-<p>ADR-001 — Event Driven Architecture<br />
-<code>ADR-001-event-driven-architecture.md</code></p>
-</li>
-<li>
-<p>ADR-002 — Hexagonal Architecture<br />
-<code>ADR-002-hexagonal-architecture.md</code></p>
-</li>
-<li>
-<p>ADR-003 — Kafka Retry Strategy<br />
-<code>ADR-003-kafka-retry-strategy.md</code></p>
-</li>
-<li>
-<p>ADR-004 — Testcontainers for Integration Tests<br />
-<code>ADR-004-testcontainers-for-integration-tests.md</code></p>
-</li>
-<li>
-<p>ADR-005 — Pull-based Deployment with Watchtower<br />
-<code>ADR-005-pull-based-deployment-with-watchtower.md</code></p>
-</li>
-<li>
-<p>ADR-006 — CQRS Read Model Strategy<br />
-<code>ADR-006-cqrs-read-model-strategy.md</code></p>
-</li>
-<li>
-<p>ADR-007 — Domain Events and Outbox Pattern<br />
-<code>ADR-007-domain-events-and-outbox-pattern.md</code></p>
-</li>
-<li>
-<p>ADR-008 — Idempotent Consumers Strategy<br />
-<code>ADR-008-idempotent-consumers-strategy.md</code></p>
-</li>
-<li>
-<p>ADR-009 — API Streaming Strategy (SSE vs WebSocket vs Polling)<br />
-<code>ADR-009-api-streaming-strategy.md</code></p>
-</li>
-<li>
-<p>ADR-010 — Container Security Strategy<br />
-<code>ADR-010-container-security-strategy.md</code></p>
-</li>
-<li>
-<p>ADR-011 — JWT Authentication Strategy<br />
-<code>ADR-011-jwt-authentication-strategy.md</code></p>
-</li>
-<li>
-<p>ADR-012 — RBAC Authorization Model<br />
-<code>ADR-012-rbac-authorization-model.md</code></p>
-</li>
+<li>les exigences de <strong>scalabilité</strong></li>
+<li>la <strong>fiabilité opérationnelle</strong></li>
+<li>les <strong>contraintes de sécurité</strong></li>
+<li>l’expertise de l’équipe</li>
+<li>l’infrastructure disponible</li>
 </ul>
+<p>Documenter ces décisions permet aux ingénieurs de comprendre
+<strong>pourquoi le système a été conçu de cette manière</strong>, et pas
+uniquement <strong>comment il fonctionne</strong>.</p>
 <hr />
-<h1 id="pourquoi-utiliser-des-adr">Pourquoi utiliser des ADR<a class="headerlink" href="#pourquoi-utiliser-des-adr" title="Permanent link">&para;</a></h1>
-<p>Les Architecture Decision Records permettent de :</p>
+<h2 id="perimetre">Périmètre<a class="headerlink" href="#perimetre" title="Permanent link">&para;</a></h2>
+<p>Les ADR présentés ici se concentrent sur les <strong>principes
+d’architecture</strong> et les <strong>pratiques d’ingénierie</strong> utilisées
+dans le projet.</p>
+<p>Les détails opérationnels liés à l’infrastructure interne
+ou aux environnements de production sont volontairement
+omis.</p>
+<hr />
+<h2 id="principales-decisions-documentees">Principales décisions documentées<a class="headerlink" href="#principales-decisions-documentees" title="Permanent link">&para;</a></h2>
+<p>Les décisions d’architecture suivantes sont décrites
+dans cette section :</p>
 <ul>
-<li>comprendre l’évolution de l’architecture</li>
-<li>documenter les compromis techniques</li>
-<li>faciliter l’onboarding de nouveaux développeurs</li>
-<li>conserver une mémoire technique du projet</li>
+<li>adoption d’une <strong>architecture orientée événements</strong></li>
+<li>utilisation de <strong>l’architecture hexagonale</strong></li>
+<li>stratégie de <strong>gestion des retries avec Kafka</strong></li>
+<li>stratégie <strong>CQRS pour les modèles de lecture</strong></li>
+<li>utilisation du <strong>pattern Outbox</strong></li>
+<li>stratégie <strong>d’idempotence des consommateurs</strong></li>
+<li>approche de <strong>streaming API</strong></li>
+<li>stratégie de <strong>sécurité des conteneurs</strong></li>
+<li>modèle d’<strong>authentification et d’autorisation</strong></li>
 </ul>
-<p>Chaque ADR explique <strong>pourquoi une décision a été prise</strong>, et pas
-seulement <strong>ce qui a été implémenté</strong>.</p>
+<p>Chaque ADR décrit le problème rencontré, la solution retenue
+et les conséquences de cette décision.</p>
+<hr />
+<h2 id="structure-dun-adr">Structure d’un ADR<a class="headerlink" href="#structure-dun-adr" title="Permanent link">&para;</a></h2>
+<p>Chaque Architecture Decision Record suit généralement
+la structure suivante :</p>
+<ol>
+<li>
+<p><strong>Contexte</strong><br />
+   Situation ou problème nécessitant une décision.</p>
+</li>
+<li>
+<p><strong>Décision</strong><br />
+   Choix d’architecture retenu.</p>
+</li>
+<li>
+<p><strong>Conséquences</strong><br />
+   Impacts positifs et négatifs de cette décision.</p>
+</li>
+</ol>
+<hr />
+<h2 id="relation-avec-larchitecture-du-projet">Relation avec l’architecture du projet<a class="headerlink" href="#relation-avec-larchitecture-du-projet" title="Permanent link">&para;</a></h2>
+<p>Les ADR complètent la documentation d’architecture
+présente dans la section <strong>Architecture Overview</strong> du
+projet Seaway.</p>
+<p>Ensemble, ces documents permettent de comprendre :</p>
+<ul>
+<li>l’<strong>architecture globale du système</strong></li>
+<li>le <strong>raisonnement technique ayant conduit aux choix réalisés</strong></li>
+</ul>
 
 
 
