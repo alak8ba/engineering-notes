@@ -603,11 +603,13 @@ et les redirige vers les services internes.</p>
 <pre class="mermaid"><code>flowchart TD
     C[Client] --&gt;|HTTPS| RP["Reverse Proxy (TLS termination)"]
     RP --&gt;|HTTP| B[Backend Service]</code></pre></p>
-<p>Avantages :</p>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <ul>
 <li>simplifie la configuration des services backend</li>
 <li>centralise la gestion des certificats</li>
 </ul>
+</div>
 <hr/>
 <h2 id="routage-des-requetes">Routage des requêtes<a class="headerlink" href="#routage-des-requetes" title="Permanent link">¶</a></h2>
 <p>Le reverse proxy peut diriger les requêtes
@@ -668,7 +670,8 @@ location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span
 <li>le reste est servi par le frontend</li>
 </ul>
 <hr/>
-<h1 id="avantages">Avantages<a class="headerlink" href="#avantages" title="Permanent link">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <p>Le reverse proxy apporte plusieurs bénéfices :</p>
 <ul>
 <li>point d’entrée unique</li>
@@ -677,22 +680,23 @@ location<span class="w"> </span>/<span class="w"> </span><span class="o">{</span
 <li>meilleure observabilité</li>
 <li>simplification de l’architecture</li>
 </ul>
+</div>
 <hr/>
-<h1 id="limites">Limites<a class="headerlink" href="#limites" title="Permanent link">¶</a></h1>
-<p>Le reverse proxy devient
-un composant critique du système.</p>
+<div class="admonition warning">
+<p class="admonition-title">Limites</p>
+<p>Le reverse proxy devient un composant critique du système.</p>
 <p>Il doit être :</p>
 <ul>
 <li>correctement configuré</li>
 <li>surveillé</li>
 <li>sécurisé</li>
 </ul>
-<p>Dans les architectures très distribuées,
-un reverse proxy peut être complété par :</p>
+<p>Dans les architectures très distribuées, un reverse proxy peut être complété par :</p>
 <ul>
 <li>un load balancer</li>
 <li>un API gateway</li>
 </ul>
+</div>
 <hr/>
 <h1 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h1>
 <p>Le reverse proxy est un élément

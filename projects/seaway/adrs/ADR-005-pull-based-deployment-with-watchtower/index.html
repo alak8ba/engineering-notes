@@ -1288,34 +1288,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Conséquences">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#avantages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Avantages
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inconvenients" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inconvénients
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1485,7 +1457,8 @@ le serveur doit être authentifié.</p>
 <h2 id="rootdockerconfigjson"><div class="highlight"><pre><span></span><code>/root/.docker/config.json
 </code></pre></div><a class="headerlink" href="#rootdockerconfigjson" title="Permanent link">&para;</a></h2>
 <h2 id="consequences">Conséquences<a class="headerlink" href="#consequences" title="Permanent link">&para;</a></h2>
-<h3 id="avantages">Avantages<a class="headerlink" href="#avantages" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <ul>
 <li>aucune connexion entrante requise</li>
 <li>compatible avec une infrastructure HTTPS-only</li>
@@ -1493,13 +1466,16 @@ le serveur doit être authentifié.</p>
 <li>déploiement automatique simple</li>
 <li>rollback possible via version d’image</li>
 </ul>
+</div>
 <hr />
-<h3 id="inconvenients">Inconvénients<a class="headerlink" href="#inconvenients" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Inconvénients</p>
 <ul>
 <li>moins de contrôle direct du moment du déploiement</li>
 <li>dépendance à Watchtower</li>
 <li>nécessité de gérer correctement les tags d’images</li>
 </ul>
+</div>
 <hr />
 <h2 id="alternatives-considerees">Alternatives considérées<a class="headerlink" href="#alternatives-considerees" title="Permanent link">&para;</a></h2>
 <h3 id="deploiement-via-ssh-depuis-ci">Déploiement via SSH depuis CI<a class="headerlink" href="#deploiement-via-ssh-depuis-ci" title="Permanent link">&para;</a></h3>

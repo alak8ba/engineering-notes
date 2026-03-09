@@ -723,16 +723,18 @@ dans le local storage.</p>
 <p>Une approche plus sécurisée consiste
 à stocker les tokens dans des cookies
 <strong>HttpOnly</strong>.</p>
-<p>Avantages :</p>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <ul>
 <li>inaccessible au JavaScript</li>
 <li>réduit les risques XSS</li>
 </ul>
-<p>Les cookies peuvent être configurés avec :
+<p>Les cookies peuvent être configurés avec :</p>
+</div>
 <div class="highlight"><pre><span></span><code>HttpOnly
 Secure
 SameSite
-</code></pre></div></p>
+</code></pre></div>
 <hr/>
 <h1 id="securite">Sécurité<a class="headerlink" href="#securite" title="Permanent link">¶</a></h1>
 <p>Plusieurs bonnes pratiques sont recommandées.</p>
@@ -757,7 +759,8 @@ des règles d'autorisation.</p>
 ROLE_USER
 </code></pre></div></p>
 <hr/>
-<h1 id="avantages">Avantages<a class="headerlink" href="#avantages" title="Permanent link">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <p>JWT permet :</p>
 <ul>
 <li>une API stateless</li>
@@ -765,16 +768,18 @@ ROLE_USER
 <li>une compatibilité avec les SPA</li>
 <li>une architecture simple</li>
 </ul>
+</div>
 <hr/>
-<h1 id="limites">Limites<a class="headerlink" href="#limites" title="Permanent link">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Limites</p>
 <p>JWT introduit certains défis :</p>
 <ul>
 <li>gestion de la révocation</li>
 <li>gestion des refresh tokens</li>
 <li>sécurisation du stockage</li>
 </ul>
-<p>Une mauvaise implémentation
-peut introduire des failles.</p>
+<p>Une mauvaise implémentation peut introduire des failles.</p>
+</div>
 <hr/>
 <h1 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h1>
 <p>JWT est aujourd'hui une solution

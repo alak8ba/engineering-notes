@@ -659,7 +659,8 @@ les événements de la table outbox.</p>
 <li>marquer l'événement comme traité</li>
 </ol>
 <hr/>
-<h1 id="avantages">Avantages<a class="headerlink" href="#avantages" title="Permanent link">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <p>Le Outbox Pattern apporte plusieurs bénéfices :</p>
 <ul>
 <li>élimine le problème du dual write</li>
@@ -667,16 +668,18 @@ les événements de la table outbox.</p>
 <li>permet de rejouer les événements</li>
 <li>améliore la fiabilité du système</li>
 </ul>
+</div>
 <hr/>
-<h1 id="inconvenients">Inconvénients<a class="headerlink" href="#inconvenients" title="Permanent link">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Inconvénients</p>
 <p>Le pattern introduit :</p>
 <ul>
 <li>une table supplémentaire</li>
 <li>un composant de publication</li>
 <li>une complexité légèrement supérieure</li>
 </ul>
-<p>Cependant cette complexité est généralement
-acceptable dans les architectures distribuées.</p>
+<p>Cependant cette complexité est généralement acceptable dans les architectures distribuées.</p>
+</div>
 <hr/>
 <h1 id="interaction-avec-dautres-patterns">Interaction avec d'autres patterns<a class="headerlink" href="#interaction-avec-dautres-patterns" title="Permanent link">¶</a></h1>
 <p>Le Outbox Pattern fonctionne généralement

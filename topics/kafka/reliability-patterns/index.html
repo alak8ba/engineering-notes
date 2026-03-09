@@ -655,12 +655,14 @@ entre la base de données et les événements.</p>
 le service enregistre l’événement dans une table
 <code>outbox</code> dans la même transaction que la modification métier.</p>
 <p>Un composant dédié publie ensuite l’événement vers Kafka.</p>
-<p>Avantages :</p>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <ul>
 <li>élimine le problème du <strong>dual write</strong></li>
 <li>garantit que les événements ne sont pas perdus</li>
 <li>permet de rejouer les événements</li>
 </ul>
+</div>
 <hr/>
 <h1 id="2-retry">2 — Retry<a class="headerlink" href="#2-retry" title="Permanent link">¶</a></h1>
 <p>Les erreurs temporaires sont fréquentes
@@ -724,7 +726,8 @@ d’effet de bord.</p>
 <li>l’idempotence garantit l’absence de doublons</li>
 </ol>
 <hr/>
-<h1 id="avantages">Avantages<a class="headerlink" href="#avantages" title="Permanent link">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <p>Cette combinaison apporte :</p>
 <ul>
 <li>résilience</li>
@@ -732,18 +735,19 @@ d’effet de bord.</p>
 <li>observabilité</li>
 <li>tolérance aux erreurs</li>
 </ul>
-<p>Elle permet de construire
-des architectures event-driven robustes.</p>
+<p>Elle permet de construire des architectures event-driven robustes.</p>
+</div>
 <hr/>
-<h1 id="limites">Limites<a class="headerlink" href="#limites" title="Permanent link">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Limites</p>
 <p>Ces patterns introduisent :</p>
 <ul>
 <li>plus de composants</li>
 <li>plus de complexité</li>
 <li>plus d’observabilité nécessaire</li>
 </ul>
-<p>Cependant cette complexité est généralement
-nécessaire pour les systèmes distribués.</p>
+<p>Cependant cette complexité est généralement nécessaire pour les systèmes distribués.</p>
+</div>
 <hr/>
 <h1 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">¶</a></h1>
 <p>Les systèmes event-driven doivent être conçus

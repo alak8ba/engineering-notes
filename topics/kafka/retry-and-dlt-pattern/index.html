@@ -1341,7 +1341,8 @@ Exemple simplifié :
 <li>envoi dans le DLT si échec</li>
 </ul>
 <hr />
-<h1 id="avantages-du-pattern">Avantages du pattern<a class="headerlink" href="#avantages-du-pattern" title="Permanent link">&para;</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Avantages du pattern</p>
 <p>Ce pattern apporte plusieurs bénéfices :</p>
 <ul>
 <li>amélioration de la résilience</li>
@@ -1349,16 +1350,18 @@ Exemple simplifié :
 <li>continuité du traitement des topics</li>
 <li>meilleure observabilité des erreurs</li>
 </ul>
+</div>
 <hr />
-<h1 id="limites">Limites<a class="headerlink" href="#limites" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Limites</p>
 <p>Le pattern ne résout pas certains problèmes :</p>
 <ul>
 <li>erreurs métier persistantes</li>
 <li>duplication possible des messages</li>
 <li>nécessité de gérer l'idempotence</li>
 </ul>
-<p>C’est pourquoi il est généralement combiné
-avec un <strong>consumer idempotent</strong>.</p>
+<p>C’est pourquoi il est généralement combiné avec un <strong>consumer idempotent</strong>.</p>
+</div>
 <hr />
 <h1 id="bonnes-pratiques">Bonnes pratiques<a class="headerlink" href="#bonnes-pratiques" title="Permanent link">&para;</a></h1>
 <p>Plusieurs bonnes pratiques sont recommandées :</p>

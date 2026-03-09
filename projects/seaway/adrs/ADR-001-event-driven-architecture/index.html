@@ -1248,20 +1248,26 @@ et consommés par différents composants :</p>
 </ul>
 <hr />
 <h2 id="consequences">Conséquences<a class="headerlink" href="#consequences" title="Permanent link">&para;</a></h2>
-<p>Avantages :</p>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <ul>
 <li>découplage entre composants</li>
 <li>meilleure évolutivité</li>
 <li>traitement asynchrone</li>
 <li>possibilité d'ajouter de nouveaux consommateurs</li>
 </ul>
-<p>Inconvénients :</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Inconvénients</p>
 <ul>
 <li>complexité accrue</li>
 <li>gestion des retries</li>
 <li>gestion des doublons</li>
 </ul>
-<p>Ces problématiques sont traitées via :</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Ces problématiques sont traitées via</p>
+</div>
 <ul>
 <li>idempotence</li>
 <li>retry avec backoff</li>

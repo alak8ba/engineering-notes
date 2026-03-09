@@ -1266,34 +1266,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Conséquences">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#avantages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Avantages
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inconvenients" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inconvénients
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1458,20 +1430,24 @@ processed_at
 l'application multiple d'un même événement.</p>
 <hr />
 <h2 id="consequences">Conséquences<a class="headerlink" href="#consequences" title="Permanent link">&para;</a></h2>
-<h3 id="avantages">Avantages<a class="headerlink" href="#avantages" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <ul>
 <li>cohérence du système</li>
 <li>tolérance aux redélivrances Kafka</li>
 <li>compatibilité avec les retries</li>
 <li>sécurité en cas de replay d'événements</li>
 </ul>
+</div>
 <hr />
-<h3 id="inconvenients">Inconvénients<a class="headerlink" href="#inconvenients" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Inconvénients</p>
 <ul>
 <li>complexité supplémentaire</li>
 <li>gestion d'identifiants d'événements</li>
 <li>stockage éventuel des événements traités</li>
 </ul>
+</div>
 <hr />
 <h2 id="alternatives-considerees">Alternatives considérées<a class="headerlink" href="#alternatives-considerees" title="Permanent link">&para;</a></h2>
 <h3 id="exactly-once-semantics">Exactly-once semantics<a class="headerlink" href="#exactly-once-semantics" title="Permanent link">&para;</a></h3>

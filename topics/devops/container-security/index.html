@@ -1292,12 +1292,14 @@ s’exécuter avec l’utilisateur root.</p>
 <p>Exemple dans un Dockerfile :
 <div class="highlight"><pre><span></span><code><span class="k">RUN</span><span class="w"> </span>useradd<span class="w"> </span>-u<span class="w"> </span><span class="m">10001</span><span class="w"> </span>appuser
 <span class="k">USER</span><span class="w"> </span><span class="s">appuser</span>
-</code></pre></div>
-Avantages :</p>
+</code></pre></div></p>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <ul>
 <li>réduit les privilèges</li>
 <li>limite l’impact d’une compromission</li>
 </ul>
+</div>
 <hr />
 <h1 id="filesystem-en-lecture-seule">Filesystem en lecture seule<a class="headerlink" href="#filesystem-en-lecture-seule" title="Permanent link">&para;</a></h1>
 <p>Les conteneurs applicatifs peuvent être
@@ -1315,11 +1317,13 @@ montés en mémoire avec <strong>tmpfs</strong>.</p>
 <div class="highlight"><pre><span></span><code>tmpfs:
 /tmp
 </code></pre></div></p>
-<p>Avantages :</p>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <ul>
 <li>empêche la persistance de fichiers</li>
 <li>améliore les performances</li>
 </ul>
+</div>
 <hr />
 <h1 id="isolation-reseau">Isolation réseau<a class="headerlink" href="#isolation-reseau" title="Permanent link">&para;</a></h1>
 <p>Les services internes ne doivent pas
@@ -1392,17 +1396,19 @@ les vulnérabilités.</p>
 <p>Cela permet de détecter
 des comportements anormaux.</p>
 <hr />
-<h1 id="avantages">Avantages<a class="headerlink" href="#avantages" title="Permanent link">&para;</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
 <p>Ces pratiques permettent :</p>
 <ul>
 <li>une meilleure isolation</li>
 <li>une réduction des risques</li>
 <li>une architecture plus sécurisée</li>
 </ul>
+</div>
 <hr />
-<h1 id="limites">Limites<a class="headerlink" href="#limites" title="Permanent link">&para;</a></h1>
-<p>La sécurité des conteneurs doit être
-complétée par d’autres mécanismes :</p>
+<div class="admonition warning">
+<p class="admonition-title">Limites</p>
+<p>La sécurité des conteneurs doit être complétée par d’autres mécanismes :</p>
 <ul>
 <li>firewall</li>
 <li>reverse proxy</li>
@@ -1411,6 +1417,7 @@ complétée par d’autres mécanismes :</p>
 </ul>
 <p>La sécurité doit être
 multi-couches.</p>
+</div>
 <hr />
 <h1 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h1>
 <p>Les conteneurs simplifient le déploiement

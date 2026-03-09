@@ -1238,34 +1238,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Conséquences">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#avantages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Avantages
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inconvenients" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inconvénients
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1414,20 +1386,26 @@ d'état significatif dans le domaine.</p>
 </ol>
 <hr />
 <h2 id="consequences">Conséquences<a class="headerlink" href="#consequences" title="Permanent link">&para;</a></h2>
-<h3 id="avantages">Avantages<a class="headerlink" href="#avantages" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Avantages</p>
+</div>
 <ul>
-<li>élimine le problème du dual write</li>
+<li>élimine le problème du dual write<ul>
 <li>améliore la fiabilité des événements</li>
 <li>permet de rejouer les événements si nécessaire</li>
 <li>facilite l'observabilité des flux événementiels</li>
 </ul>
+</li>
+</ul>
 <hr />
-<h3 id="inconvenients">Inconvénients<a class="headerlink" href="#inconvenients" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Inconvénients</p>
 <ul>
 <li>complexité supplémentaire</li>
 <li>table outbox à maintenir</li>
 <li>nécessité d'un composant de publication</li>
 </ul>
+</div>
 <hr />
 <h2 id="alternatives-considerees">Alternatives considérées<a class="headerlink" href="#alternatives-considerees" title="Permanent link">&para;</a></h2>
 <h3 id="publication-directe-vers-kafka">Publication directe vers Kafka<a class="headerlink" href="#publication-directe-vers-kafka" title="Permanent link">&para;</a></h3>
