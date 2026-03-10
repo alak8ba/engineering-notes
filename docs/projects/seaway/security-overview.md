@@ -5,6 +5,7 @@
 	This documentation presents the architectural principles  and engineering practices used in the project.  
 	  
 	Operational details and internal infrastructure configurations are intentionally omitted.
+
 ## Objectif
 
 Mettre en place une architecture de sécurité
@@ -17,18 +18,21 @@ Les principes suivis :
 - exposition minimale des services
 - défense en profondeur
 
+---
 ```mermaid
+
 flowchart LR
 
-User --> Frontend
-Frontend --> Nginx
-Nginx --> Backend
-Backend --> PostgreSQL
-Backend --> Kafka
+    User --> Frontend
+    Frontend --> Nginx
+    Nginx --> Backend
+    Backend --> PostgreSQL
+    Backend --> Kafka
 ```
+
 ---
 
-# Authentification
+## Authentification
 
 Seaway utilise une authentification basée sur **JWT**.
 
@@ -52,7 +56,7 @@ Flux d'authentification :
 
 ---
 
-# Autorisation
+## Autorisation
 
 Le système utilise un modèle **RBAC (Role-Based Access Control)**.
 
@@ -68,7 +72,7 @@ L'autorisation est appliquée via :
 
 ---
 
-# Backend Security
+## Backend Security
 
 Spring Security est configuré en **mode stateless**.
 
@@ -86,7 +90,7 @@ Protections :
 
 ---
 
-# Reverse Proxy
+## Reverse Proxy
 
 Nginx agit comme point d'entrée unique.
 
@@ -106,7 +110,7 @@ Headers de sécurité activés :
 
 ---
 
-# Docker Security
+## Docker Security
 
 Les conteneurs sont configurés selon le principe
 du **moindre privilège**.
@@ -119,7 +123,7 @@ Mesures appliquées :
 
 ---
 
-# Firewall
+## Firewall
 
 Le firewall UFW applique une politique restrictive.
 
@@ -136,7 +140,7 @@ Ports internes non exposés :
 
 ---
 
-# Isolation réseau
+## Isolation réseau
 
 Les services sensibles ne sont accessibles
 que via le réseau Docker interne.
@@ -149,7 +153,7 @@ Aucun de ces services n'est exposé publiquement.
 
 ---
 
-# Défense en profondeur
+## Défense en profondeur
 
 La sécurité repose sur plusieurs couches :
 
