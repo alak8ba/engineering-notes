@@ -88,7 +88,6 @@ nav:
           - Architecture Overview: projects/seaway/architecture-overview.md
           - CI/CD Overview: projects/seaway/ci-cd-overview.md
           - Security Overview: projects/seaway/security-overview.md
-          - Adr: projects/seaway/security-overview.md
 
           - Architecture Decisions:
               - Overview: projects/seaway/adrs/index.md
