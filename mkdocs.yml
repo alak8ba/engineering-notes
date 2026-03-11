@@ -77,6 +77,7 @@ nav:
           - Reliability Patterns: topics/kafka/reliability-patterns.md
     - Security:
           - JWT Authentication Pattern: topics/security/jwt-authentication-pattern.md
+          - CORS — Cross-Origin Resource Sharing: topics/security/cors.md
     - DevOps:
           - Docker Production Pattern: topics/devops/docker-production-pattern.md
           - Container Security: topics/devops/container-security.md
